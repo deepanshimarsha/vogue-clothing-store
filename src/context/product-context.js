@@ -7,7 +7,8 @@ const ProductContextProvider = ({children}) => {
     
     const initialState = {
         products : [],
-        filteredProducts : []
+        filteredProducts : [],
+        category : []
 
     }
     
@@ -24,8 +25,20 @@ const ProductContextProvider = ({children}) => {
         }
     }
 
+    const getCategoryData = async () => {
+        try{
+            const res = await fetch("/api/categories")
+            const resJson = await res.json()
+            dispatch({type : "SET_CATEGORY", data : resJson.categories})
+        }
+        catch(e){
+            console.error(e)
+        }
+    }
+
     useEffect(() => {
         getProductData()
+        getCategoryData()
     },[])
 
     return (
