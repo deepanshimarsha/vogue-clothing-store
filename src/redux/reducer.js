@@ -7,6 +7,10 @@ const reducer = (state, action) => {
         case "SET_CATEGORY" : {
             return {...state, category : action.data}
         }
+
+        case "SET_PRODUCT_DETAIL" : {
+            return {...state, productDetail : [action.data]}
+        }
         default:
             throw new Error("Unknown action type");
     }

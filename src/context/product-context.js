@@ -8,7 +8,8 @@ const ProductContextProvider = ({children}) => {
     const initialState = {
         products : [],
         filteredProducts : [],
-        category : []
+        category : [],
+        productDetail : []
 
     }
     
@@ -36,13 +37,24 @@ const ProductContextProvider = ({children}) => {
         }
     }
 
+    const getProductDetail = async(productId) => {
+        try{
+            const res = await fetch(`/api/products/${productId}`)
+            const resJson = await res.json()
+            dispatch({type : "SET_PRODUCT_DETAIL", data : resJson.product})
+        }
+        catch(e){
+            console.error(e)
+        }
+    }
+
     useEffect(() => {
         getProductData()
         getCategoryData()
     },[])
 
     return (
-        <ProductContext.Provider value={{state}}>
+        <ProductContext.Provider value={{state, getProductDetail}}>
             {children}
         </ProductContext.Provider>
     )
