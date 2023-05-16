@@ -1,20 +1,19 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-export default function ProductCard(item){
+export default function ProductCard(item) {
+  const { id, title, author, price, categoryName, details } = item;
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{price}</p>
+      <NavLink to="/cart">add to cart</NavLink>
 
-    const {id, title, author, price, categoryName, details} = item
-    return(
+      {details && (
         <div>
-            <h2>{title}</h2>
-            <p>{price}</p>
-
-            {details && (
-                <div>
-            <p>author: {author}</p>
-            <p>category : {categoryName}</p>
-            </div>
-            
-            )}
+          <p>author: {author}</p>
+          <p>category : {categoryName}</p>
         </div>
-    )
+      )}
+    </div>
+  );
 }

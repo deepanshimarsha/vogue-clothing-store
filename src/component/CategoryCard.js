@@ -1,11 +1,10 @@
-export default function CategoryCard({category_item}){
+export default function CategoryCard({ category_item }) {
+  const { id, categoryName, description } = category_item;
 
-    const {id, categoryName, description } = category_item
-
-    return(
-        <div>
-            <h2>{categoryName}</h2>
-            <p>{description}</p>
-        </div>
-    )
+  return (
+    <div>
+      <h2>{categoryName}</h2>
+      <p>{description}</p>
+    </div>
+  );
 }
