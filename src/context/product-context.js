@@ -19,7 +19,7 @@ const ProductContextProvider = ({ children }) => {
     category: [],
     productDetail: [],
     cart: [],
-    isLoggedIn: true,
+    isLoggedIn: false,
     user: testUser,
   };
 
@@ -104,16 +104,68 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  //cart
+
+  //fetching user cart
+
+  const getCart = async () => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+
+      const res = await fetch("/api/user/cart", {
+        method: "GET",
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+
+      const jsonData = await res.json();
+      //console.log("1", jsonData)
+      dispatch({ type: "SET_CART", data: jsonData.cart });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  //add to cart
+
+  const addToCart = async (item) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+
+      const res = await fetch("/api/user/cart", {
+        method: "POST",
+        headers: {
+          authorization: encodedToken,
+        },
+        body: JSON.stringify({ product: item }),
+      });
+      const jsonData = await res.json();
+      //console.log("3", jsonData.cart);
+      dispatch({ type: "SET_CART", data: jsonData.cart });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   //on loading
   useEffect(() => {
     getProductData();
     getCategoryData();
-    loginUser();
   }, []);
 
   return (
     <ProductContext.Provider
-      value={{ state, dispatch, getProductDetail, loginUser, signup, testUser }}
+      value={{
+        state,
+        dispatch,
+        getProductDetail,
+        loginUser,
+        signup,
+        testUser,
+        getCart,
+        addToCart,
+      }}
     >
       {children}
     </ProductContext.Provider>

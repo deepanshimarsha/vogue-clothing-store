@@ -9,15 +9,21 @@ import Login from "./pages/Login";
 import UserAccount from "./pages/UserAccount";
 import Signup from "./pages/Signup";
 import RequiresAuth from "./component/RequiresAuth";
+import Cart from "./pages/Cart";
+import { useProductContext } from "./context/product-context";
 
 function App() {
+  const { getCart } = useProductContext();
   return (
     <div className="App">
       <nav>
         <NavLink to="/">Home</NavLink>||
         <NavLink to="/products">Our Products</NavLink>||
         <NavLink to="/wishlist">Wishlist</NavLink>||
-        <NavLink to="/cart">Cart</NavLink>||
+        <NavLink to="/cart" onClick={() => getCart()}>
+          Cart
+        </NavLink>
+        ||
         <NavLink to="/user_account">My Account</NavLink>
       </nav>
 
@@ -30,6 +36,14 @@ function App() {
           element={
             <RequiresAuth>
               <UserAccount />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <RequiresAuth>
+              <Cart />
             </RequiresAuth>
           }
         />
