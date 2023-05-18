@@ -3,11 +3,12 @@ import { useProductContext } from "../context/product-context";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductCard(item) {
-  const { state, addToCart, addToWishlist } = useProductContext();
+  const { state, addToCart, addToWishlist, findInCart, findInWishlist } =
+    useProductContext();
   const { _id, title, author, price, categoryName, details } = item;
 
-  const indexCart = state.cart.findIndex(({ _id }) => _id === item._id);
-  const indexWishlist = state.wishlist.findIndex(({ _id }) => _id === item._id);
+  const indexCart = findInCart(_id);
+  const indexWishlist = findInWishlist(_id);
   const navigate = useNavigate();
 
   const handleClickForCart = () => {

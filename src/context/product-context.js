@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 import { formatDate } from "../backend//utils/authUtils";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../redux/reducer";
+import { useNavigate } from "react-router-dom";
 
 const ProductContext = createContext(null);
 
@@ -231,7 +232,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  //add to cart
+  //add to wishlist
 
   const addToWishlist = async (item) => {
     try {
@@ -252,7 +253,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  //remove from cart
+  //remove from wishlist
 
   const removeFromWishlist = async (itemId) => {
     try {
@@ -270,6 +271,17 @@ const ProductContextProvider = ({ children }) => {
       console.error(e);
     }
   };
+
+  //find product in cart
+
+  const findInCart = (itemId) =>
+    state.cart.findIndex(({ _id }) => _id === itemId);
+
+  //find product in wishlist
+
+  const findInWishlist = (itemId) =>
+    state.wishlist.findIndex(({ _id }) => _id === itemId);
+
   //on loading
   useEffect(() => {
     getProductData();
@@ -293,6 +305,8 @@ const ProductContextProvider = ({ children }) => {
         addToWishlist,
         getWishlist,
         removeFromWishlist,
+        findInCart,
+        findInWishlist,
       }}
     >
       {children}
