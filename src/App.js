@@ -20,9 +20,7 @@ function App() {
         <NavLink to="/">Home</NavLink>||
         <NavLink to="/products">Our Products</NavLink>||
         <NavLink to="/wishlist">Wishlist</NavLink>||
-        <NavLink to="/cart" onClick={() => getCart()}>
-          Cart
-        </NavLink>
+        <NavLink to="/cart">Cart</NavLink>
         ||
         <NavLink to="/user_account">My Account</NavLink>
       </nav>

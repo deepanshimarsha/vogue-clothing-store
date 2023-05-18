@@ -10,7 +10,7 @@ export default function LoginLogoutButton({ location }) {
     if (!state.isLoggedIn) {
       loginUser();
     } else {
-      localStorage.removeItem("token");
+      //localStorage.removeItem("token");
       if (state.user !== testUser) {
         dispatch({ type: "SET_TEST_USER", data: testUser });
       }

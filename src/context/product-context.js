@@ -120,7 +120,7 @@ const ProductContextProvider = ({ children }) => {
       });
 
       const jsonData = await res.json();
-      //console.log("1", jsonData)
+
       dispatch({ type: "SET_CART", data: jsonData.cart });
     } catch (e) {
       console.error(e);
@@ -141,7 +141,66 @@ const ProductContextProvider = ({ children }) => {
         body: JSON.stringify({ product: item }),
       });
       const jsonData = await res.json();
-      //console.log("3", jsonData.cart);
+
+      dispatch({ type: "SET_CART", data: jsonData.cart });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  //remove from cart
+
+  const removeFromCart = async (itemId) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+      const res = await fetch(`/api/user/cart/${itemId}`, {
+        method: "DELETE",
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+      const jsonData = await res.json();
+
+      dispatch({ type: "SET_CART", data: jsonData.cart });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  //update qty of products in cart
+
+  const incrementProductQty = async (itemId) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+      const res = await fetch(`/api/user/cart/${itemId}`, {
+        method: "POST",
+        headers: {
+          authorization: encodedToken,
+        },
+        body: JSON.stringify({ action: { type: "increment" } }),
+      });
+
+      const jsonData = await res.json();
+
+      dispatch({ type: "SET_CART", data: jsonData.cart });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const decremnetProductQty = async (itemId) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+      const res = await fetch(`/api/user/cart/${itemId}`, {
+        method: "POST",
+        headers: {
+          authorization: encodedToken,
+        },
+        body: JSON.stringify({ action: { type: "decrement" } }),
+      });
+
+      const jsonData = await res.json();
+
       dispatch({ type: "SET_CART", data: jsonData.cart });
     } catch (e) {
       console.error(e);
@@ -165,6 +224,9 @@ const ProductContextProvider = ({ children }) => {
         testUser,
         getCart,
         addToCart,
+        removeFromCart,
+        incrementProductQty,
+        decremnetProductQty,
       }}
     >
       {children}
