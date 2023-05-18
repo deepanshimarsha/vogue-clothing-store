@@ -11,6 +11,7 @@ import Signup from "./pages/Signup";
 import RequiresAuth from "./component/RequiresAuth";
 import Cart from "./pages/Cart";
 import { useProductContext } from "./context/product-context";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   const { getCart } = useProductContext();
@@ -45,9 +46,16 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route
+          path="/wishlist"
+          element={
+            <RequiresAuth>
+              <Wishlist />
+            </RequiresAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>

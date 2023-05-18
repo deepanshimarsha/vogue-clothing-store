@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import CartProductCard from "../component/CartProductCard";
-import ProductCard from "../component/ProductCard";
 import { useProductContext } from "../context/product-context";
 
 export default function () {

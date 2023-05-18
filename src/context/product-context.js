@@ -19,6 +19,7 @@ const ProductContextProvider = ({ children }) => {
     category: [],
     productDetail: [],
     cart: [],
+    wishlist: [],
     isLoggedIn: false,
     user: testUser,
   };
@@ -207,6 +208,68 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  //wishlist
+
+  //fetching user wishlist
+
+  const getWishlist = async () => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+
+      const res = await fetch("/api/user/wishlist", {
+        method: "GET",
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+
+      const jsonData = await res.json();
+      console.log(jsonData);
+      dispatch({ type: "SET_WISHLIST", data: jsonData.wishlist });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  //add to cart
+
+  const addToWishlist = async (item) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+
+      const res = await fetch("/api/user/wishlist", {
+        method: "POST",
+        headers: {
+          authorization: encodedToken,
+        },
+        body: JSON.stringify({ product: item }),
+      });
+      const jsonData = await res.json();
+
+      dispatch({ type: "SET_WISHLIST", data: jsonData.wishlist });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  //remove from cart
+
+  const removeFromWishlist = async (itemId) => {
+    try {
+      const encodedToken = localStorage.getItem("token");
+      const res = await fetch(`/api/user/wishlist/${itemId}`, {
+        method: "DELETE",
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+      const jsonData = await res.json();
+
+      dispatch({ type: "SET_WISHLIST", data: jsonData.wishlist });
+    } catch (e) {
+      console.error(e);
+    }
+  };
   //on loading
   useEffect(() => {
     getProductData();
@@ -227,6 +290,9 @@ const ProductContextProvider = ({ children }) => {
         removeFromCart,
         incrementProductQty,
         decremnetProductQty,
+        addToWishlist,
+        getWishlist,
+        removeFromWishlist,
       }}
     >
       {children}

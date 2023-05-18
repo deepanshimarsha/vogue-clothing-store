@@ -14,6 +14,9 @@ const reducer = (state, action) => {
     case "SET_CART": {
       return { ...state, cart: action.data };
     }
+    case "SET_WISHLIST": {
+      return { ...state, wishlist: action.data };
+    }
 
     case "TOGGLE_IS_LOGGED_IN": {
       return { ...state, isLoggedIn: !state.isLoggedIn };
