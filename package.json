@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dayjs": "^1.11.7",
+    "gson": "^0.1.5",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "miragejs": "^0.1.47",

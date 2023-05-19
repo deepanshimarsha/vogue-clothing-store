@@ -13,6 +13,7 @@ import Cart from "./pages/Cart";
 import { useProductContext } from "./context/product-context";
 import Wishlist from "./pages/Wishlist";
 import AddressForm from "./component/AddressForm";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const { getCart } = useProductContext();
@@ -56,6 +57,7 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mockman" element={<Mockman />} />

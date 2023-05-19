@@ -1,6 +1,7 @@
 import { useProductContext } from "../context/product-context";
 import ProductCard from "../component/ProductCard";
 import { NavLink } from "react-router-dom";
+import Filters from "../component/Filters";
 
 export default function ProductList() {
   const { state } = useProductContext();
@@ -8,6 +9,7 @@ export default function ProductList() {
     <div>
       <h1>Product Listing Page</h1>
       <div>
+        <Filters />
         {state.filteredProducts.map((item) => {
           return (
             <div>

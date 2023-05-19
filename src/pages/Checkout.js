@@ -1,10 +1,11 @@
 import UserAddress from "../component/UserAddress";
 import OrderSummary from "../component/OrderSummary";
+import SelectAddress from "../component/SelectAddress";
 export default function Checkout() {
   return (
     <div>
-      <UserAddress />
       <OrderSummary />
+      <SelectAddress />
     </div>
   );
 }

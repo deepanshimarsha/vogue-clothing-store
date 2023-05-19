@@ -8,6 +8,36 @@ const reducer = (state, action) => {
       return { ...state, category: action.data };
     }
 
+    case "SET_PRICE_RANGE": {
+      return {
+        ...state,
+        filters: { ...state.filters, priceRange: action.value },
+      };
+    }
+
+    case "TOGGLE_SHOW_MEN": {
+      return {
+        ...state,
+        filters: { ...state.filters, showMen: !state.filters.showMen },
+      };
+    }
+    case "TOGGLE_SHOW_WOMEN": {
+      return {
+        ...state,
+        filters: { ...state.filters, showWomen: !state.filters.showWomen },
+      };
+    }
+    case "TOGGLE_SHOW_KIDS": {
+      return {
+        ...state,
+        filters: { ...state.filters, showKids: !state.filters.showKids },
+      };
+    }
+
+    case "SET_SORT_BY": {
+      return { ...state, filters: { ...state.filters, sortBy: action.method } };
+    }
+
     case "SET_PRODUCT_DETAIL": {
       return { ...state, productDetail: [action.data] };
     }
@@ -99,6 +129,11 @@ const reducer = (state, action) => {
         address: state.address.filter(({ id }) => id !== action.addressId),
       };
     }
+
+    case "SET_CHECKOUT_ADDRESS": {
+      return { ...state, checkoutAddress: action.data };
+    }
+
     default:
       throw new Error("Unknown action type");
   }

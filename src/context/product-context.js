@@ -57,8 +57,16 @@ const ProductContextProvider = ({ children }) => {
     wishlist: [],
     address: [testAddress],
     newAddress: {},
+    checkoutAddress: testAddress,
     isLoggedIn: false,
     user: testUser,
+    filters: {
+      showMen: false,
+      showWomen: false,
+      showKids: false,
+      sortBy: "",
+      priceRange: "100",
+    },
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

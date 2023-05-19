@@ -15,14 +15,16 @@ export default function () {
   return (
     <div>
       {cartLen !== 0 ? (
-        state.cart.map((item) => {
-          return (
-            <div>
-              <CartProductCard {...item} />
-              <PriceDetailCard />
-            </div>
-          );
-        })
+        <div>
+          <PriceDetailCard />
+          {state.cart.map((item) => {
+            return (
+              <div>
+                <CartProductCard {...item} />
+              </div>
+            );
+          })}
+        </div>
       ) : (
         <p>cart is empty</p>
       )}
