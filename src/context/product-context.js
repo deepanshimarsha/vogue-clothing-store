@@ -13,6 +13,40 @@ const ProductContextProvider = ({ children }) => {
     email: "deepanshisharma2510@gmail.com",
     password: "test",
   };
+
+  const testAddress = {
+    id: "1",
+    name: "Deepanshi Sharma",
+    address: "103B, 1st floor, Akansha Residency, Narsingh Nagar, Ranjhi",
+    city: "Jabalpur",
+    state: "Madhya Pradesh",
+    country: "India",
+    postal_code: "482005",
+    phone_no: +917649942366,
+  };
+
+  const dummyAddress = {
+    id: "test",
+    name: "test",
+    address: "test address",
+    city: "test",
+    state: "test",
+    country: "test",
+    postal_code: "test",
+    phone_no: 1234567891,
+  };
+
+  const emptyAddress = {
+    id: "",
+    name: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    postal_code: "",
+    phone_no: "",
+  };
+
   //initial state
   const initialState = {
     products: [],
@@ -21,6 +55,8 @@ const ProductContextProvider = ({ children }) => {
     productDetail: [],
     cart: [],
     wishlist: [],
+    address: [testAddress],
+    newAddress: {},
     isLoggedIn: false,
     user: testUser,
   };
@@ -58,6 +94,12 @@ const ProductContextProvider = ({ children }) => {
     } catch (e) {
       console.error(e);
     }
+  };
+
+  //User Address
+
+  const removeAddress = (addressId) => {
+    dispatch({ type: "REMOVE_ADDRESS", addressId: addressId });
   };
 
   //Auth
@@ -307,6 +349,9 @@ const ProductContextProvider = ({ children }) => {
         removeFromWishlist,
         findInCart,
         findInWishlist,
+        removeAddress,
+        dummyAddress,
+        emptyAddress,
       }}
     >
       {children}

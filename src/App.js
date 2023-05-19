@@ -12,6 +12,7 @@ import RequiresAuth from "./component/RequiresAuth";
 import Cart from "./pages/Cart";
 import { useProductContext } from "./context/product-context";
 import Wishlist from "./pages/Wishlist";
+import AddressForm from "./component/AddressForm";
 
 function App() {
   const { getCart } = useProductContext();
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/details/:productId" element={<ProductDetail />} />
+        <Route path="/address_form" element={<AddressForm />} />
         <Route
           path="/user_account"
           element={
