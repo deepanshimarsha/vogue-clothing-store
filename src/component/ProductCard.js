@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function ProductCard(item) {
   const { state, addToCart, addToWishlist, findInCart, findInWishlist } =
     useProductContext();
-  const { _id, title, author, price, categoryName, details } = item;
+  const { _id, img, title, price, categoryName, details } = item;
 
   const indexCart = findInCart(_id);
   const indexWishlist = findInWishlist(_id);
@@ -29,6 +29,7 @@ export default function ProductCard(item) {
 
   return (
     <div>
+      <img src={img} alt="women-product" height="100px" />
       <h2>{title}</h2>
       <p>{price}</p>
       <button onClick={handleClickForCart}>
@@ -40,7 +41,6 @@ export default function ProductCard(item) {
 
       {details && (
         <div>
-          <p>author: {author}</p>
           <p>category : {categoryName}</p>
         </div>
       )}
