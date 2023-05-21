@@ -1,0 +1,65 @@
+.price-section {
+    position: fixed;
+    width: 20%;
+    left : 65%;
+    bottom:30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 10px 20px;
+}
+
+
+.product-main {
+    position: absolute;
+    margin-top: 50px;
+    width: 50%;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.price-heading{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: 	#5A5A5A;
+}
+.price-footer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: 	#5A5A5A;
+    display: flex;
+    justify-content: space-between;
+}
+hr{ 
+    margin: 20px 0px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.price-para {
+    line-height: 8px;
+}
+
+.price-para p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-btn{
+    border: none;
+    outline: 0;
+    padding: 10px 6px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 20px;
+}

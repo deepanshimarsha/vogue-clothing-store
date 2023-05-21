@@ -14,18 +14,57 @@ import { useProductContext } from "./context/product-context";
 import Wishlist from "./pages/Wishlist";
 import AddressForm from "./component/AddressForm";
 import Checkout from "./pages/Checkout";
+import "./styles/home-page.css";
 
 function App() {
   const { getCart } = useProductContext();
   return (
     <div className="App">
-      <nav>
-        <NavLink to="/">Home</NavLink>||
-        <NavLink to="/products">Our Products</NavLink>||
-        <NavLink to="/wishlist">Wishlist</NavLink>||
-        <NavLink to="/cart">Cart</NavLink>
-        ||
-        <NavLink to="/user_account">My Account</NavLink>
+      <nav className="navbar">
+        <div className="navbar-main">
+          {" "}
+          <NavLink className="navbar-left heading" to="/">
+            <span>E-Mart</span>
+          </NavLink>
+          <input className="navbar-search" placeholder="Search"></input>
+          <div className="navbar-right">
+            {" "}
+            <NavLink className="nav-link" to="/products">
+              Our Products
+            </NavLink>
+            <NavLink className="nav-link" to="/wishlist">
+              Wishlist
+            </NavLink>
+            <NavLink className="nav-link" to="/cart">
+              Cart
+            </NavLink>
+            <div className="dropdown-main">
+              {" "}
+              <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+            </div>
+            <select>
+              <option>
+                <button>
+                  <NavLink to="/user_account">Profile</NavLink>
+                </button>
+              </option>
+              <option>
+                <NavLink to="/user_address">Address</NavLink>
+              </option>
+              <option>Logout</option>
+            </select>
+            <NavLink className="nav-link" to="/user_account">
+              My Account
+            </NavLink>
+          </div>
+        </div>
       </nav>
 
       <Routes>

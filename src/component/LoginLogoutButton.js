@@ -1,5 +1,6 @@
 import { useProductContext } from "../context/product-context";
 import { useNavigate } from "react-router-dom";
+import "../styles/login-page.css";
 
 export default function LoginLogoutButton({ location }) {
   const { state, dispatch, loginUser, testUser } = useProductContext();
@@ -21,7 +22,7 @@ export default function LoginLogoutButton({ location }) {
   };
   return (
     <div>
-      <button onClick={handleClick}>
+      <button className="login-btn" onClick={handleClick}>
         {state.isLoggedIn ? "Logout" : "Login with test credentials"}
       </button>
     </div>

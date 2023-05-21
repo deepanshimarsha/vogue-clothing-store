@@ -1,0 +1,114 @@
+.signup-container {
+    display: flex;
+    box-shadow: 0 30px 50px 0 rgba(0,0,0,.2);
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    border-radius: 4px;
+    height: 80vh;
+    margin-top: 20px;
+}
+
+.thumbnail-container{
+    width: 45%;
+    background-image: url("https://www.seekpng.com/png/detail/95-953129_fashion-illustration-clothing-fashion-design-the-nextgen-transparent.png");
+    position: relative;
+    
+    
+}
+
+.thumbnail-heading {
+    letter-spacing: 5px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    top:40%;
+    width: 95%;
+    
+    
+    
+    text-align: left;
+    padding: 10px;
+}
+
+.thumbnail-heading p{
+    margin-top: 0px;
+   font-size: large;
+}
+
+.signup_form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 20px;
+    padding: 20px;
+    padding-top: 10px;
+
+
+}
+.signup_group{
+   text-align: left;
+   margin-top: 35px;
+}
+.signup_form h3 {
+    font-weight: bolder;
+    font-size: 25px;
+    letter-spacing: 9px;
+    margin: 0px;
+    
+    margin-top: 40px;
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 90%;
+    
+    padding: 10px 20px 10px 20px;
+    padding-left: 5px;
+    margin: 20px 0px 10px 0px;
+    color: #8a8b8e;
+    border: 1px solid #c2c0ca;
+   
+    font-style: normal;
+    
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    background: 0 0;
+    
+
+}
+
+input[type=submit]{
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 20px;
+}
+
+.signup_form label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ccc;
+  text-align: left;
+}
+.signup-footer {
+    display: flex;
+    
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.signup-footer a{
+    color: black;
+    align-self: center;
+
+}

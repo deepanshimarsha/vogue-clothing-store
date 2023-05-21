@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import CartProductCard from "../component/CartProductCard";
 import { useProductContext } from "../context/product-context";
 import PriceDetailCard from "../component/PriceDetailCard";
+import "../styles/cart-page.css";
 
 export default function () {
   const { state, getCart } = useProductContext();
@@ -15,15 +16,15 @@ export default function () {
   return (
     <div>
       {cartLen !== 0 ? (
-        <div>
-          <PriceDetailCard />
-          {state.cart.map((item) => {
-            return (
-              <div>
-                <CartProductCard {...item} />
-              </div>
-            );
-          })}
+        <div className="cart-main">
+          <div className="product-main">
+            {state.cart.map((item) => {
+              return <CartProductCard {...item} />;
+            })}
+          </div>
+          <div className="price-section">
+            <PriceDetailCard />
+          </div>
         </div>
       ) : (
         <p>cart is empty</p>

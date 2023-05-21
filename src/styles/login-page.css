@@ -1,0 +1,88 @@
+.login-main{
+    background-color: white;
+    font-size: 1.6rem;
+    font-family: open sans,sans-serif;
+    color: #2b3e51;
+    width: 100%;
+}
+.form-background {
+    background-color: #fff;
+    width: 35%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 0 0;
+    border-radius: 4px;
+    box-shadow: 0 30px 50px 0 rgba(0,0,0,.2);
+}
+
+.form-background h2{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+   
+    
+}
+p{
+    position: relative;
+}
+
+.login-form input[type=text], .login-form input[type=password] {
+    width: 100%;
+    padding: 20px 10px 20px 10px;
+    margin-top: 20px;
+    color: #8a8b8e;
+    border: 1px solid #c2c0ca;
+    font-style: normal;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    background: 0 0;
+    margin-bottom: 0px;
+}
+
+.login-form{
+    padding: 0 60px;
+    text-align: left;
+    
+   
+}
+.login-form label {
+    font-size: 1rem;
+  text-transform: uppercase;
+  color: #ccc;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.login-btn {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 105%;
+    font-size: 20px;
+}
+
+.create-account-wrap {
+    background-color: #eeedf1;
+    color: #8a8b8e;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.create-account-wrap a {
+    color: black;
+    margin-left: 10px;
+}

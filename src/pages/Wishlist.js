@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useProductContext } from "../context/product-context";
 import WishlistProductCard from "../component/WishlistProductCard";
+import "../styles/wishlist.css";
 
 export default function Wishlist() {
   const { state, getWishlist } = useProductContext();
@@ -12,9 +13,12 @@ export default function Wishlist() {
   return (
     <div>
       {wishlistLen !== 0 ? (
-        state.wishlist.map((item) => {
-          return <WishlistProductCard {...item} />;
-        })
+        <div className="wishlist-container">
+          {" "}
+          {state.wishlist.map((item) => {
+            return <WishlistProductCard {...item} />;
+          })}
+        </div>
       ) : (
         <p>wishlist is empty</p>
       )}

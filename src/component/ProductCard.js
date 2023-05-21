@@ -1,10 +1,17 @@
 import { NavLink, Navigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useNavigate } from "react-router-dom";
+import "../styles/product-card.css";
 
 export default function ProductCard(item) {
-  const { state, addToCart, addToWishlist, findInCart, findInWishlist } =
-    useProductContext();
+  const {
+    state,
+    addToCart,
+    addToWishlist,
+    findInCart,
+    findInWishlist,
+    removeFromWishlist,
+  } = useProductContext();
   const { _id, img, title, price, categoryName, details } = item;
 
   const indexCart = findInCart(_id);
@@ -17,33 +24,47 @@ export default function ProductCard(item) {
     } else {
       navigate("/cart");
     }
+    console.log(state.cart);
   };
 
   const handleClickForWishlist = () => {
     if (indexWishlist === -1) {
       addToWishlist(item);
     } else {
-      navigate("/wishlist");
+      removeFromWishlist(item._id);
     }
   };
 
   return (
-    <div>
-      <img src={img} alt="women-product" height="100px" />
-      <h2>{title}</h2>
-      <p>{price}</p>
+    <div className="card">
+      <NavLink to={`/details/${item._id}`}>
+        {" "}
+        <img src={img} alt="women-product" style={{ width: "100%" }} />
+      </NavLink>
+
+      <p className="prod-title">{title}</p>
+      <p className="price">Rs. {price}</p>
       <button onClick={handleClickForCart}>
         {indexCart === -1 ? "Add to Cart" : "Go to Cart"}
       </button>
-      <button onClick={handleClickForWishlist}>
-        {indexWishlist === -1 ? "Add to Wishlist" : "Go to wishlist"}
-      </button>
-
-      {details && (
-        <div>
-          <p>category : {categoryName}</p>
-        </div>
-      )}
+      <span
+        role="button"
+        className="wishlist-icon"
+        onClick={handleClickForWishlist}
+      >
+        {indexWishlist === -1 ? (
+          <i
+            class="far fa-heart"
+            aria-hidden="true"
+            style={{
+              fontSize: "24px",
+              color: "black",
+            }}
+          ></i>
+        ) : (
+          <i class="fas fa-heart" style={{ fontSize: "24px" }}></i>
+        )}
+      </span>
     </div>
   );
 }
