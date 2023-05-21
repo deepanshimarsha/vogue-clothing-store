@@ -7,18 +7,25 @@ export default function LoginLogoutButton({ location }) {
 
   const navigate = useNavigate();
 
+  //console.log(location?.state?.from?.pathname === "/login");
+
   const handleClick = () => {
     if (!state.isLoggedIn) {
       loginUser();
+      if (location?.state?.from?.pathname === "/login") {
+        navigate("/");
+      } else {
+        navigate(location?.state?.from);
+      }
     } else {
       //localStorage.removeItem("token");
       if (state.user !== testUser) {
         dispatch({ type: "SET_TEST_USER", data: testUser });
       }
+      navigate("/");
     }
 
     dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
-    navigate(location?.state?.from);
   };
   return (
     <div>

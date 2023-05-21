@@ -1,5 +1,11 @@
 import "./App.css";
-import { Routes, Route, NavLink } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  NavLink,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 import Mockman from "mockman-js";
 
 import Home from "./pages/Home";
@@ -15,9 +21,16 @@ import Wishlist from "./pages/Wishlist";
 import AddressForm from "./component/AddressForm";
 import Checkout from "./pages/Checkout";
 import "./styles/home-page.css";
+import UserAddress from "./component/UserAddress";
+import { useLocation } from "react-router-dom";
+import { formatDate } from "./backend/utils/authUtils";
 
 function App() {
-  const { getCart } = useProductContext();
+  const { getCart, state, dispatch } = useProductContext();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = () => {};
   return (
     <div className="App">
       <nav className="navbar">
@@ -38,31 +51,41 @@ function App() {
             <NavLink className="nav-link" to="/cart">
               Cart
             </NavLink>
-            <div className="dropdown-main">
-              {" "}
-              <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+            {state.isLoggedIn ? (
+              <div className="dropdown-main">
+                {" "}
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <i
+                      class="fas fa-user-circle"
+                      style={{ fontSize: "20px", padding: "5px" }}
+                    ></i>
+                    {state.user.firstName}
+                  </button>
+                  <div class="dropdown-content">
+                    <NavLink to="/user_account">Profile</NavLink>
+                    <NavLink to="/user_address">Address</NavLink>
+                    <NavLink
+                      to="/"
+                      onClick={() => {
+                        dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
+                      }}
+                    >
+                      Logout
+                    </NavLink>
+                  </div>
                 </div>
               </div>
-            </div>
-            <select>
-              <option>
-                <button>
-                  <NavLink to="/user_account">Profile</NavLink>
-                </button>
-              </option>
-              <option>
-                <NavLink to="/user_address">Address</NavLink>
-              </option>
-              <option>Logout</option>
-            </select>
-            <NavLink className="nav-link" to="/user_account">
+            ) : (
+              <button className="dropbtn">
+                <NavLink to="/login" state={{ from: location }}>
+                  Login
+                </NavLink>
+              </button>
+            )}
+            {/* <NavLink className="nav-link" to="/user_account">
               My Account
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
       </nav>
@@ -77,6 +100,14 @@ function App() {
           element={
             <RequiresAuth>
               <UserAccount />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/user_address"
+          element={
+            <RequiresAuth>
+              <UserAddress />
             </RequiresAuth>
           }
         />

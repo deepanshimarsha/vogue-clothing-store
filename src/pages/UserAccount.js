@@ -13,7 +13,6 @@ export default function UserAccount() {
       {isLoggedIn && (
         <div>
           <UserProfile />
-          <UserAddress />
         </div>
       )}
     </div>

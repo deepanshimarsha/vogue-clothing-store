@@ -7,6 +7,7 @@ import "../styles/login-page.css";
 export default function Login() {
   const { state } = useProductContext();
   const location = useLocation();
+  //console.log(location);
   return (
     <div className="login-main">
       <div className="form-background">

@@ -79,7 +79,9 @@ body {
   align-items: center;
   text-decoration: none;
 }
-
+.navbar-right {
+  margin-right: 50px;
+}
 .navbar-search {
   background-color: var(--white);
   background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
@@ -110,28 +112,24 @@ body {
 .link-container {
   margin-left: 100px;
 }
-
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.main{
-  position: relative;
-}
-
 .dropdown-main{
   position: absolute;
-  top: 1%;
-  right: 40%;
+  top: 20%;
+  left: 84%;
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
+  position: fixed;
   display: inline-block;
+ 
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -139,7 +137,7 @@ body {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
  
@@ -154,10 +152,14 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: black; color: white;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+
+
+
