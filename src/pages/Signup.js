@@ -91,7 +91,9 @@ export default function Signup() {
             onClick={handleClick}
           />
 
-          <NavLink to="/login">I am already a member</NavLink>
+          <NavLink to="/login" state={{ from: "/" }}>
+            I am already a member
+          </NavLink>
         </div>
       </div>
     </div>
