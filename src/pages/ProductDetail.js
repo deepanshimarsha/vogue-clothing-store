@@ -88,7 +88,7 @@ export default function ProductDetail() {
 
               <span className="detail-price">Rs.{item.price} </span>
 
-              <button className="btn" classonClick={handleClickForCart}>
+              <button className="btn" onClick={handleClickForCart}>
                 {indexCart === -1 ? "Add to Cart" : "Go to Cart"}
               </button>
             </div>

@@ -15,27 +15,86 @@ const reducer = (state, action) => {
       };
     }
 
-    case "TOGGLE_SHOW_MEN": {
+    case "SET_SEARCH_INPUT": {
       return {
         ...state,
-        filters: { ...state.filters, showMen: !state.filters.showMen },
+        filters: { ...state.filters, searchInput: action.text },
       };
     }
-    case "TOGGLE_SHOW_WOMEN": {
+    case "TOGGLE_SHOW_DRESSES": {
       return {
         ...state,
-        filters: { ...state.filters, showWomen: !state.filters.showWomen },
+        filters: { ...state.filters, showDresses: !state.filters.showDresses },
       };
     }
-    case "TOGGLE_SHOW_KIDS": {
+    case "TOGGLE_SHOW_TOPS": {
       return {
         ...state,
-        filters: { ...state.filters, showKids: !state.filters.showKids },
+        filters: { ...state.filters, showTops: !state.filters.showTops },
+      };
+    }
+    case "TOGGLE_SHOW_BOTTOMS": {
+      return {
+        ...state,
+        filters: { ...state.filters, showBottoms: !state.filters.showBottoms },
       };
     }
 
     case "SET_SORT_BY": {
-      return { ...state, filters: { ...state.filters, sortBy: action.method } };
+      return {
+        ...state,
+        filters: { ...state.filters, sortBy: action.option },
+      };
+    }
+
+    case "FILTER_PRODUCTS": {
+      let newFilteredProducts = state.products.slice();
+
+      if (state.filters.showDresses) {
+        newFilteredProducts = newFilteredProducts.filter(
+          ({ categoryName }) => categoryName === "dresses"
+        );
+      }
+      if (state.filters.showTops) {
+        newFilteredProducts = newFilteredProducts.filter(
+          ({ categoryName }) => categoryName === "tops"
+        );
+      }
+      if (state.filters.showBottoms) {
+        newFilteredProducts = newFilteredProducts.filter(
+          ({ categoryName }) => categoryName === "bottoms"
+        );
+      }
+
+      //search input
+      newFilteredProducts = newFilteredProducts.filter(({ title }) =>
+        title.toLowerCase().includes(state.filters.searchInput.toLowerCase())
+      );
+
+      if (state.filters.sortBy === "DESC") {
+        newFilteredProducts = [...newFilteredProducts].sort(
+          (a, b) => b.price - a.price
+        );
+      }
+
+      if (state.filters.sortBy === "RATING") {
+        newFilteredProducts = [...newFilteredProducts].sort(
+          (a, b) => b.rating - a.rating
+        );
+      }
+
+      if (state.priceRange !== "") {
+        newFilteredProducts = newFilteredProducts.filter(
+          ({ price }) => Number(price) <= Number(state.filters.priceRange)
+        );
+      }
+
+      console.log("a", newFilteredProducts);
+
+      return {
+        ...state,
+        filteredProducts: newFilteredProducts,
+      };
     }
 
     case "SET_PRODUCT_DETAIL": {

@@ -10,12 +10,16 @@ export default function SortFilter() {
       <div className="sort-select">
         <select
           onChange={(e) =>
-            dispatch({ type: "SET_SORT_BY", method: e.target.value })
+            dispatch({ type: "SET_SORT_BY", option: e.target.value })
           }
         >
+          <option hidden="true" default="true">
+            Choose
+          </option>
+
           <option value="DESC">Price: High to Low</option>
           <option value="ASC">Price Low to High</option>
-          <option value="rating">Customer Rating</option>
+          <option value="RATING">Customer Rating</option>
         </select>
       </div>
     </div>

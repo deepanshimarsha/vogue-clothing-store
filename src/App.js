@@ -39,7 +39,13 @@ function App() {
           <NavLink className="navbar-left heading" to="/">
             <span>E-Mart</span>
           </NavLink>
-          <input className="navbar-search" placeholder="Search"></input>
+          <input
+            className="navbar-search"
+            placeholder="Search"
+            onChange={(e) =>
+              dispatch({ type: "SET_SEARCH_INPUT", text: e.target.value })
+            }
+          ></input>
           <div className="navbar-right">
             {" "}
             <NavLink className="nav-link" to="/products">
@@ -78,7 +84,11 @@ function App() {
               </div>
             ) : (
               <button className="dropbtn">
-                <NavLink to="/login" state={{ from: location }}>
+                <NavLink
+                  className="nav-link"
+                  to="/login"
+                  state={{ from: location }}
+                >
                   Login
                 </NavLink>
               </button>

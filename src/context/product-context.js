@@ -61,15 +61,37 @@ const ProductContextProvider = ({ children }) => {
     isLoggedIn: false,
     user: testUser,
     filters: {
-      showMen: false,
-      showWomen: false,
-      showKids: false,
+      showDresses: false,
+      showTops: false,
+      showBottoms: false,
       sortBy: "",
-      priceRange: "100",
+      priceRange: "",
+      searchInput: "",
     },
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    dispatch({ type: "FILTER_PRODUCTS" });
+  }, [
+    state.filters.showDresses,
+    state.filters.showTops,
+    state.filters.showBottoms,
+    state.filters.sortBy,
+    state.filters.priceRange,
+    state.filters.searchInput,
+  ]);
+
+  console.log("3", state.filteredProducts);
+
+  // useEffect(() => {
+  //   dispatch({ type: "SORT_PRODUCTS" });
+  // }, [state.filters.sortBy]);
+
+  // useEffect(() => {
+  //   dispatch({ type: "FILTER_PRODUCTS_BY_PRICE" });
+  // }, [state.filters.priceRange]);
 
   //product listing
   const getProductData = async () => {

@@ -12,27 +12,27 @@ export default function CategoryFilter() {
         <div>
           <input
             type="checkbox"
-            checked={state.filters.showMen}
-            onChange={() => dispatch({ type: "TOGGLE_SHOW_MEN" })}
+            checked={state.filters.showDresses}
+            onChange={() => dispatch({ type: "TOGGLE_SHOW_DRESSES" })}
           ></input>
-          <label>Men</label>
+          <label>Dresses</label>
         </div>
         <div>
           {" "}
           <input
             type="checkbox"
-            checked={state.filters.showWomen}
-            onChange={() => dispatch({ type: "TOGGLE_SHOW_WOMEN" })}
+            checked={state.filters.showTops}
+            onChange={() => dispatch({ type: "TOGGLE_SHOW_TOPS" })}
           ></input>
-          <label>Women</label>
+          <label>Tops</label>
         </div>
         <div>
           <input
             type="checkbox"
-            checked={state.filters.showKids}
-            onChange={() => dispatch({ type: "TOGGLE_SHOW_KIDS" })}
+            checked={state.filters.showBottoms}
+            onChange={() => dispatch({ type: "TOGGLE_SHOW_BOTTOMS" })}
           ></input>
-          <label>Kids</label>
+          <label>Bottoms</label>
         </div>
       </div>
     </div>

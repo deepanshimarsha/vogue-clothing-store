@@ -3,9 +3,20 @@ import ProductCard from "../component/ProductCard";
 import { NavLink } from "react-router-dom";
 import Filters from "../component/Filters";
 import "../styles/product-list.css";
+import { useEffect } from "react";
 
 export default function ProductList() {
-  const { state } = useProductContext();
+  const { state, dispatch } = useProductContext();
+
+  // useEffect(() => {
+  //   dispatch({ type: "FILTER_PRODUCTS" });
+  // }, [
+  //   state.filters.sortBy,
+  //   state.filters.priceRange,
+  //   state.filters.searchInput,
+
+  // ]);
+
   return (
     <div className="content">
       <div className="filter-container">
