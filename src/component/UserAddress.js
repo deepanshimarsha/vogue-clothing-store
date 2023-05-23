@@ -7,7 +7,7 @@ export default function UserAddress() {
   console.log(state.address);
   return (
     <div className="address-container">
-      <h1 className="address-title" style={{ color: "#5A5A5A" }}>
+      <h1 className="address-title" s>
         My Addresses
       </h1>
       {state.address.map((user_address) => {

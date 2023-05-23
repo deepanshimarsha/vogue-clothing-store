@@ -13,6 +13,7 @@
 }
 .address-title{
     letter-spacing: 5px;
+   color: #5A5A5A;
 }
 
 .address-content {
@@ -37,9 +38,13 @@
 .address-btn {
     display: flex;
     gap:0.5rem;
-    width: 35%;
-    
+    width: 90%;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
+
+
 .address-btn button {
     border: none;
     outline: 0;
@@ -52,4 +57,30 @@
     font-size: 14px;
     margin-top: 20px;
     color: black;
+}
+
+.address-form {
+    display:flex;
+    flex-direction: column;
+    margin: 10px 40px;
+}
+
+.address-form input {
+    width: 90%;
+    
+    padding: 10px 20px 10px 20px;
+    padding-left: 5px;
+    margin: 10px;
+    color: #8a8b8e;
+    border: 1px solid #c2c0ca;
+   
+    font-style: normal;
+    
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    background: 0 0;
 }

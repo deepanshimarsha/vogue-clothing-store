@@ -1,10 +1,12 @@
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useEffect, useState } from "react";
+import "../styles/address.css";
 
 export default function AddressForm() {
   const { state, dispatch, dummyAddress, emptyAddress } = useProductContext();
-  console.log("1", state.newAddress);
+
+  //console.log("1", state.newAddress);
 
   const [warning, setWarning] = useState("");
   const navigate = useNavigate();
@@ -19,10 +21,10 @@ export default function AddressForm() {
   }, []);
 
   return (
-    <div>
-      <h1>Add New Address</h1>
+    <div className="address-container" style={{ marginTop: "20px" }}>
+      <h1 className="address-title">Add New Address</h1>
       {warning}
-      <form>
+      <form className="address-form">
         <input
           required
           placeholder="Enter Name"
@@ -100,17 +102,20 @@ export default function AddressForm() {
             })
           }
         ></input>
-        <button type="sumbit" onClick={(e) => handleClick(e)}>
-          Add
-        </button>{" "}
-        ||{" "}
-        <NavLink
-          to="/user_account"
-          onClick={() => dispatch({ type: "ADD_ADDRESS", data: dummyAddress })}
-        >
-          Add Dummy Address
-        </NavLink>
-        <button>Cancel</button>
+        <div className="address-btn">
+          <button type="sumbit" onClick={(e) => handleClick(e)}>
+            Add
+          </button>{" "}
+          <button>Cancel</button>
+          <button
+            onClick={() => {
+              dispatch({ type: "ADD_ADDRESS", data: dummyAddress });
+              navigate("/user_account");
+            }}
+          >
+            Add Dummy Address
+          </button>
+        </div>
       </form>
     </div>
   );
