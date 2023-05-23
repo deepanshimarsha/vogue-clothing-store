@@ -10,7 +10,7 @@
 
 
 .product-main {
-    position: absolute;
+    position: relative;
     margin-top: 50px;
     width: 50%;
     left: 17%;
@@ -62,4 +62,8 @@ hr{
     width: 100%;
     font-size: 14px;
     margin-top: 20px;
+}
+.cart-main {
+    position: relative;
+    bottom: -20px;
 }
