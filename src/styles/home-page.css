@@ -1,0 +1,45 @@
+.tag-block {
+    text-align: center;
+}
+
+.img-container {
+   position: relative;
+   background-color: #efefef;
+}
+
+.collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    position: relative;
+    
+}
+
+.category1{
+    display: flex;
+    
+}
+
+.tops-collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: absolute;
+    bottom: 30%;
+}
+
+.tops-img {
+    position: absolute;
+    top: 37%;
+}
+
+.bottoms-img{
+    position: absolute;
+    top: 75%;
+}
+
+.bottoms-collection {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    top: 74.3%;
+}
