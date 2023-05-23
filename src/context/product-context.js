@@ -61,7 +61,6 @@ const ProductContextProvider = ({ children }) => {
     isLoggedIn: false,
     user: testUser,
     filters: {
-      clear: false,
       showDresses: false,
       showTops: false,
       showBottoms: false,

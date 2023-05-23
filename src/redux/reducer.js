@@ -133,14 +133,16 @@ const reducer = (state, action) => {
     }
 
     case "CLEAR_FILTER": {
-      if (action.filter === "CLEAR_CATEGORY") {
+      if (action.filter === "ALL_FILTER") {
         return {
           ...state,
           filters: {
-            ...state.filters,
-            showBottoms: false,
             showDresses: false,
             showTops: false,
+            showBottoms: false,
+            sortBy: "",
+            priceRange: "",
+            searchInput: "",
           },
         };
       }

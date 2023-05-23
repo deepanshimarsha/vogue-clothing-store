@@ -10,7 +10,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleShowNowBtn = () => {
-    dispatch({ type: "CLEAR_FILTER", filter: "CLEAR_CATEGORY" });
+    dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" });
     navigate("/products");
   };
 

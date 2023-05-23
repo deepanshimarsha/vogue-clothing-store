@@ -6,7 +6,9 @@ import { useProductContext } from "../context/product-context";
 
 export default function Filters() {
   const { state, dispatch } = useProductContext();
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" });
+  };
   return (
     <div className="filters">
       <div className="filter-heading">
