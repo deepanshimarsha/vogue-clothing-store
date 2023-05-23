@@ -7,9 +7,9 @@ export default function Wishlist() {
   const { state, getWishlist } = useProductContext();
   const wishlistLen = state.wishlist.length;
 
-  useEffect(() => {
-    getWishlist();
-  }, []);
+  // useEffect(() => {
+  //   getWishlist();
+  // }, []);
   return (
     <div>
       {wishlistLen !== 0 ? (

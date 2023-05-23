@@ -145,6 +145,7 @@ const ProductContextProvider = ({ children }) => {
       localStorage.setItem("loginToken", encodedToken);
       dispatch({ type: "CLEAR_TEST_ADDRESS_ON_SIGNUP" });
       getCart();
+      getWishlist();
     } catch (e) {
       console.error(e);
     }
@@ -169,6 +170,7 @@ const ProductContextProvider = ({ children }) => {
       localStorage.setItem("loginToken", encodedToken);
 
       getCart();
+      getWishlist();
     } catch (e) {
       console.log(e);
     }
