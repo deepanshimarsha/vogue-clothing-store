@@ -1,25 +1,31 @@
 import { NavLink } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import AddressCard from "./AddressCard";
+import "../styles/address.css";
 export default function UserAddress() {
   const { state, removeAddress } = useProductContext();
   console.log(state.address);
   return (
-    <div>
-      <h1>My Addresses</h1>
+    <div className="address-container">
+      <h1 className="address-title" style={{ color: "#5A5A5A" }}>
+        My Addresses
+      </h1>
       {state.address.map((user_address) => {
         return (
-          <div>
+          <div className="address-content">
             <AddressCard {...user_address} />
-            <button>Edit</button>
-            <button onClick={() => removeAddress(user_address.id)}>
-              Remove
-            </button>
-            ;
+            <div className="address-btn">
+              <button>Edit</button>
+              <button onClick={() => removeAddress(user_address.id)}>
+                Remove
+              </button>
+            </div>
           </div>
         );
       })}
-      <NavLink to="/address_form">Add New Address</NavLink>
+      <div className="address-footer">
+        <NavLink to="/address_form">+ Add New Address</NavLink>
+      </div>
     </div>
   );
 }

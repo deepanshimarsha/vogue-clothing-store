@@ -8,7 +8,7 @@ export default function UserProfile() {
   return (
     <div className="profile-container">
       <h1 className="profile-title" style={{ color: "#5A5A5A" }}>
-        Profile
+        My Profile
       </h1>
       <div className="profile-description">
         <p>
