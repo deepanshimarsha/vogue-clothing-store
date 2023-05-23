@@ -132,6 +132,20 @@ const reducer = (state, action) => {
       };
     }
 
+    case "CLEAR_FILTER": {
+      if (action.filter === "CLEAR_CATEGORY") {
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            showBottoms: false,
+            showDresses: false,
+            showTops: false,
+          },
+        };
+      }
+    }
+
     case "SET_PRODUCT_DETAIL": {
       return { ...state, productDetail: [action.data] };
     }

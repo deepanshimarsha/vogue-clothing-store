@@ -8,7 +8,9 @@ export default function Home() {
   const { state, dispatch } = useProductContext();
 
   const navigate = useNavigate();
+
   const handleShowNowBtn = () => {
+    dispatch({ type: "CLEAR_FILTER", filter: "CLEAR_CATEGORY" });
     navigate("/products");
   };
 
