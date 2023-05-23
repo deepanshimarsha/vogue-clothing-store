@@ -84,27 +84,23 @@ const reducer = (state, action) => {
 
     case "FILTER_PRODUCTS": {
       let newFilteredProducts = state.products.slice();
-
-      if (state.filters.showDresses) {
-        newFilteredProducts = newFilteredProducts.filter(
-          ({ categoryName }) => categoryName === "dresses"
-        );
-      }
-      if (state.filters.showTops) {
-        newFilteredProducts = newFilteredProducts.filter(
-          ({ categoryName }) => categoryName === "tops"
-        );
-      }
-      if (state.filters.showBottoms) {
-        newFilteredProducts = newFilteredProducts.filter(
-          ({ categoryName }) => categoryName === "bottoms"
-        );
-      }
-
+      let categories = [];
       //search input
       newFilteredProducts = newFilteredProducts.filter(({ title }) =>
         title.toLowerCase().includes(state.filters.searchInput.toLowerCase())
       );
+
+      if (state.filters.showDresses) {
+        categories.push("dresses");
+      }
+
+      if (state.filters.showTops) {
+        categories.push("tops");
+      }
+
+      if (state.filters.showBottoms) {
+        categories.push("bottoms");
+      }
 
       if (state.filters.sortBy === "DESC") {
         newFilteredProducts = [...newFilteredProducts].sort(
@@ -124,8 +120,11 @@ const reducer = (state, action) => {
         );
       }
 
-      console.log("a", newFilteredProducts);
+      //console.log("a", newFilteredProducts);
 
+      newFilteredProducts = newFilteredProducts.filter(({ categoryName }) =>
+        categories.includes(categoryName)
+      );
       return {
         ...state,
         filteredProducts: newFilteredProducts,
