@@ -30,13 +30,20 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const navLinkStyle = ({ isActive }) => {
+    if (isActive) {
+      return { color: "black", fontWeight: "bold" };
+    } else {
+      return { color: "black" };
+    }
+  };
   const handleLogin = () => {};
   return (
     <div className="App">
       <nav className="navbar">
         <div className="navbar-main">
           {" "}
-          <NavLink className="navbar-left heading" to="/">
+          <NavLink className="navbar-left heading" to="/" style={navLinkStyle}>
             <span>E-Mart</span>
           </NavLink>
           <input
@@ -48,13 +55,13 @@ function App() {
           ></input>
           <div className="navbar-right">
             {" "}
-            <NavLink className="nav-link" to="/products">
+            <NavLink className="nav-link" to="/products" style={navLinkStyle}>
               Our Products
             </NavLink>
-            <NavLink className="nav-link" to="/wishlist">
+            <NavLink className="nav-link" to="/wishlist" style={navLinkStyle}>
               Wishlist
             </NavLink>
-            <NavLink className="nav-link" to="/cart">
+            <NavLink className="nav-link" to="/cart" style={navLinkStyle}>
               Cart
             </NavLink>
             {state.isLoggedIn ? (
@@ -75,6 +82,7 @@ function App() {
                       to="/"
                       onClick={() => {
                         dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
+                        //localStorage.removeItem("token");
                       }}
                     >
                       Logout

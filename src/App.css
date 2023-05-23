@@ -151,6 +151,7 @@ body {
   display: block;
 }
 
+.dropbtn:hover {font-weight: bold;}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: black; color: white;}
 
