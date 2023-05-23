@@ -4,7 +4,7 @@ import AddressCard from "./AddressCard";
 import "../styles/address.css";
 export default function UserAddress() {
   const { state, removeAddress } = useProductContext();
-  console.log(state.address);
+  //console.log(state.address);
   return (
     <div className="address-container">
       <h1 className="address-title" s>
@@ -16,7 +16,12 @@ export default function UserAddress() {
             <AddressCard {...user_address} />
             <div className="address-btn">
               <button>Edit</button>
-              <button onClick={() => removeAddress(user_address.id)}>
+              <button
+                onClick={() => {
+                  console.log("addressId", user_address.id);
+                  removeAddress(user_address.id);
+                }}
+              >
                 Remove
               </button>
             </div>

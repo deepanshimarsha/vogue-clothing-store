@@ -12,16 +12,19 @@ export default function LoginLogoutButton({ location }) {
   const handleClick = () => {
     if (!state.isLoggedIn) {
       loginUser();
-      if (location?.state?.from?.pathname === "/login") {
+      if (
+        location?.state?.from?.pathname === "/login" ||
+        location?.state?.from?.pathname === "/signup"
+      ) {
         navigate("/");
       } else {
         navigate(location?.state?.from);
       }
     } else {
-      //localStorage.removeItem("token");
-      if (state.user !== testUser) {
-        dispatch({ type: "SET_TEST_USER", data: testUser });
-      }
+      localStorage.removeItem("loginToken");
+      // if (state.user !== testUser) {
+      //   dispatch({ type: "SET_TEST_USER", data: testUser });
+      // }
       navigate("/");
     }
 

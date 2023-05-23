@@ -13,7 +13,7 @@ export default function ProductCard(item) {
     removeFromWishlist,
   } = useProductContext();
   const { _id, img, title, price, categoryName, details } = item;
-
+  console.log(state.cart);
   const indexCart = findInCart(_id);
   const indexWishlist = findInWishlist(_id);
   const navigate = useNavigate();

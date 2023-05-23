@@ -2,18 +2,25 @@ import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useEffect, useState } from "react";
 import "../styles/address.css";
+import { v4 as uuid } from "uuid";
 
 export default function AddressForm() {
   const { state, dispatch, dummyAddress, emptyAddress } = useProductContext();
 
   //console.log("1", state.newAddress);
 
-  const [warning, setWarning] = useState("");
+  //const [warning, setWarning] = useState("");
   const navigate = useNavigate();
 
   const handleClick = (e) => {
+    //console.log(state.newAddress);
     dispatch({ type: "ADD_ADDRESS", data: state.newAddress });
-    navigate("/user_account");
+
+    navigate("/user_address");
+  };
+
+  const handleClickForCancel = () => {
+    navigate("/user_address");
   };
 
   useEffect(() => {
@@ -23,18 +30,19 @@ export default function AddressForm() {
   return (
     <div className="address-container" style={{ marginTop: "20px" }}>
       <h1 className="address-title">Add New Address</h1>
-      {warning}
+
       <form className="address-form">
         <input
           required
           placeholder="Enter Name"
-          onChange={(e) =>
+          onChange={(e) => {
+            dispatch({ type: "CREATE_ADDRESS", field: "ID", value: uuid() });
             dispatch({
               type: "CREATE_ADDRESS",
               field: "USER_NAME",
               value: e.target.value,
-            })
-          }
+            });
+          }}
         ></input>
         <input
           required
@@ -106,11 +114,11 @@ export default function AddressForm() {
           <button type="sumbit" onClick={(e) => handleClick(e)}>
             Add
           </button>{" "}
-          <button>Cancel</button>
+          <button onClick={handleClickForCancel}>Cancel</button>
           <button
             onClick={() => {
               dispatch({ type: "ADD_ADDRESS", data: dummyAddress });
-              navigate("/user_account");
+              navigate("/user_address");
             }}
           >
             Add Dummy Address

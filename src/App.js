@@ -82,7 +82,7 @@ function App() {
                       to="/"
                       onClick={() => {
                         dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
-                        //localStorage.removeItem("token");
+                        localStorage.removeItem("loginToken");
                       }}
                     >
                       Logout

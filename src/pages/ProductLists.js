@@ -16,7 +16,7 @@ export default function ProductList() {
   //   state.filters.searchInput,
 
   // ]);
-
+  console.log("cart", state.cart);
   return (
     <div className="content">
       <div className="filter-container">

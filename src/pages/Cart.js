@@ -6,12 +6,13 @@ import "../styles/cart-page.css";
 
 export default function () {
   const { state, getCart } = useProductContext();
-  //console.log(state.cart);
+
+  console.log(state.cart);
   const cartLen = state.cart.length;
 
-  useEffect(() => {
-    getCart();
-  }, []);
+  // useEffect(() => {
+  //   getCart();
+  // }, []);
 
   return (
     <div>

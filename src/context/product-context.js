@@ -15,7 +15,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const testAddress = {
-    id: "1",
+    id: "default",
     name: "Deepanshi Sharma",
     address: "103B, 1st floor, Akansha Residency, Narsingh Nagar, Ranjhi",
     city: "Jabalpur",
@@ -27,12 +27,12 @@ const ProductContextProvider = ({ children }) => {
 
   const dummyAddress = {
     id: "test",
-    name: "test",
-    address: "test address",
-    city: "test",
-    state: "test",
-    country: "test",
-    postal_code: "test",
+    name: "Admin",
+    address: "33 , MG Road",
+    city: "Maharashtra",
+    state: "Pune",
+    country: "India",
+    postal_code: "411046",
     phone_no: 1234567891,
   };
 
@@ -48,6 +48,8 @@ const ProductContextProvider = ({ children }) => {
   };
 
   //initial state
+
+  const token = localStorage.getItem("loginToken");
   const initialState = {
     products: [],
     filteredProducts: [],
@@ -58,7 +60,7 @@ const ProductContextProvider = ({ children }) => {
     address: [testAddress],
     newAddress: {},
     checkoutAddress: testAddress,
-    isLoggedIn: false,
+    isLoggedIn: token ? true : false,
     user: testUser,
     filters: {
       showDresses: false,
@@ -71,6 +73,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  const navigate = useNavigate();
 
   //console.log("3", state.filteredProducts);
 
@@ -139,7 +142,9 @@ const ProductContextProvider = ({ children }) => {
         body: JSON.stringify(cred),
       });
       const { encodedToken } = await res.json();
-      localStorage.setItem("token", encodedToken);
+      localStorage.setItem("loginToken", encodedToken);
+      dispatch({ type: "CLEAR_TEST_ADDRESS_ON_SIGNUP" });
+      getCart();
     } catch (e) {
       console.error(e);
     }
@@ -161,7 +166,9 @@ const ProductContextProvider = ({ children }) => {
       });
 
       const { encodedToken } = await res.json();
-      localStorage.setItem("token", encodedToken);
+      localStorage.setItem("loginToken", encodedToken);
+
+      getCart();
     } catch (e) {
       console.log(e);
     }
@@ -173,7 +180,7 @@ const ProductContextProvider = ({ children }) => {
 
   const getCart = async () => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
 
       const res = await fetch("/api/user/cart", {
         method: "GET",
@@ -185,6 +192,22 @@ const ProductContextProvider = ({ children }) => {
       const jsonData = await res.json();
 
       dispatch({ type: "SET_CART", data: jsonData.cart });
+      // if (state.isLoggedIn) {
+      //   const encodedToken = localStorage.getItem("loginToken");
+
+      //   const res = await fetch("/api/user/cart", {
+      //     method: "GET",
+      //     headers: {
+      //       authorization: encodedToken,
+      //     },
+      //   });
+
+      //   const jsonData = await res.json();
+
+      //   dispatch({ type: "SET_CART", data: jsonData.cart });
+      // } else {
+      //   navigate("/cart");
+      // }
     } catch (e) {
       console.error(e);
     }
@@ -194,7 +217,7 @@ const ProductContextProvider = ({ children }) => {
 
   const addToCart = async (item) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
 
       const res = await fetch("/api/user/cart", {
         method: "POST",
@@ -215,7 +238,7 @@ const ProductContextProvider = ({ children }) => {
 
   const removeFromCart = async (itemId) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
       const res = await fetch(`/api/user/cart/${itemId}`, {
         method: "DELETE",
         headers: {
@@ -234,7 +257,7 @@ const ProductContextProvider = ({ children }) => {
 
   const incrementProductQty = async (itemId) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
       const res = await fetch(`/api/user/cart/${itemId}`, {
         method: "POST",
         headers: {
@@ -253,7 +276,7 @@ const ProductContextProvider = ({ children }) => {
 
   const decremnetProductQty = async (itemId) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
       const res = await fetch(`/api/user/cart/${itemId}`, {
         method: "POST",
         headers: {
@@ -276,7 +299,7 @@ const ProductContextProvider = ({ children }) => {
 
   const getWishlist = async () => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
 
       const res = await fetch("/api/user/wishlist", {
         method: "GET",
@@ -297,7 +320,7 @@ const ProductContextProvider = ({ children }) => {
 
   const addToWishlist = async (item) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
 
       const res = await fetch("/api/user/wishlist", {
         method: "POST",
@@ -318,7 +341,7 @@ const ProductContextProvider = ({ children }) => {
 
   const removeFromWishlist = async (itemId) => {
     try {
-      const encodedToken = localStorage.getItem("token");
+      const encodedToken = localStorage.getItem("loginToken");
       const res = await fetch(`/api/user/wishlist/${itemId}`, {
         method: "DELETE",
         headers: {
@@ -335,8 +358,14 @@ const ProductContextProvider = ({ children }) => {
 
   //find product in cart
 
-  const findInCart = (itemId) =>
-    state.cart.findIndex(({ _id }) => _id === itemId);
+  const findInCart = (itemId) => {
+    //console.log(state.cart);
+    if (state.cart.length != 0) {
+      return state.cart.findIndex(({ _id }) => _id === itemId);
+    } else {
+      return -1;
+    }
+  };
 
   //find product in wishlist
 

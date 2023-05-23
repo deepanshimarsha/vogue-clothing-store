@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_PRODUCT": {
@@ -122,9 +124,13 @@ const reducer = (state, action) => {
 
       //console.log("a", newFilteredProducts);
 
-      newFilteredProducts = newFilteredProducts.filter(({ categoryName }) =>
-        categories.includes(categoryName)
-      );
+      newFilteredProducts = newFilteredProducts.filter(({ categoryName }) => {
+        if (categories.length === 0) {
+          return true;
+        } else {
+          return categories.includes(categoryName);
+        }
+      });
       return {
         ...state,
         filteredProducts: newFilteredProducts,
@@ -226,13 +232,24 @@ const reducer = (state, action) => {
           newAddress: { ...state.newAddress, phone_no: action.value },
         };
       }
+      if (action.field === "ID") {
+        console.log("imp", action.value);
+        return {
+          ...state,
+          newAddress: { ...state.newAddress, id: action.value },
+        };
+      }
     }
 
+    case "CLEAR_TEST_ADDRESS_ON_SIGNUP": {
+      return { ...state, address: [] };
+    }
     case "ADD_ADDRESS": {
       return { ...state, address: [...state.address, action.data] };
     }
 
     case "REMOVE_ADDRESS": {
+      console.log("reducer", action.addressId);
       return {
         ...state,
         address: state.address.filter(({ id }) => id !== action.addressId),
