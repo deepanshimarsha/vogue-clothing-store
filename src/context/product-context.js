@@ -61,6 +61,7 @@ const ProductContextProvider = ({ children }) => {
     isLoggedIn: false,
     user: testUser,
     filters: {
+      clear: false,
       showDresses: false,
       showTops: false,
       showBottoms: false,
@@ -72,18 +73,7 @@ const ProductContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    dispatch({ type: "FILTER_PRODUCTS" });
-  }, [
-    state.filters.showDresses,
-    state.filters.showTops,
-    state.filters.showBottoms,
-    state.filters.sortBy,
-    state.filters.priceRange,
-    state.filters.searchInput,
-  ]);
-
-  console.log("3", state.filteredProducts);
+  //console.log("3", state.filteredProducts);
 
   // useEffect(() => {
   //   dispatch({ type: "SORT_PRODUCTS" });
@@ -355,6 +345,18 @@ const ProductContextProvider = ({ children }) => {
     state.wishlist.findIndex(({ _id }) => _id === itemId);
 
   //on loading
+
+  useEffect(() => {
+    dispatch({ type: "FILTER_PRODUCTS" });
+  }, [
+    state.filters.showDresses,
+    state.filters.showTops,
+    state.filters.showBottoms,
+    state.filters.sortBy,
+    state.filters.priceRange,
+    state.filters.searchInput,
+  ]);
+
   useEffect(() => {
     getProductData();
     getCategoryData();

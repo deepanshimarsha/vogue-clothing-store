@@ -24,7 +24,7 @@
 }
 
 .filter-heading {
-    gap: 5rem;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     display: flex;
