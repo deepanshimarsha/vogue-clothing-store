@@ -20,7 +20,7 @@ export default function Wishlist() {
           })}
         </div>
       ) : (
-        <p>wishlist is empty</p>
+        <h1>Your Wishlist Is Empty!</h1>
       )}
     </div>
   );

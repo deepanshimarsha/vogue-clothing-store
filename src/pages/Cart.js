@@ -27,7 +27,7 @@ export default function () {
           </div>
         </div>
       ) : (
-        <p>cart is empty</p>
+        <h1>Your Cart Is Empty!</h1>
       )}
     </div>
   );
