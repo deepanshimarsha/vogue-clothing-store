@@ -7,20 +7,99 @@
    background-color: #efefef;
 }
 
-.collection {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 30px;
-    position: relative;
-    
-}
-
-.category1{
+.dress-category {
+    text-align: left;
     display: flex;
     
 }
 
-.tops-collection {
+.dress-collection {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    margin: 0px 10px;
+    
+    
+}
+.top-category {
+    text-align: right;
+    display: flex;
+}
+.top-collection {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    margin: 0px 10px;
+    
+    
+}
+.home-img {
+    position: relative;
+}
+.home-btn {
+    text-align: left;
+    line-height: 15px;
+    position: absolute;
+    bottom: 35%;
+    left: 10%;
+    font-size: 23px;
+    font-family:"Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+    
+}
+
+.home-btn h1{
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.home-btn button{
+    text-align: center;
+background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  
+  padding: 50px 50px;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home-btn button:hover,
+.home-btn button:focus {
+  background-color: #F082AC;
+}
+
+
+.banner {
+    padding: 70px;
+    font-size: 40px;
+}
+
+/* 
+.category1{
+    display: flex;
+    
+} */
+
+/* .tops-collection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     position: absolute;
@@ -42,4 +121,4 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     top: 74.3%;
-}
+} */

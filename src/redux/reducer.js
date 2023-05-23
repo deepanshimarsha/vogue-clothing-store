@@ -21,6 +21,41 @@ const reducer = (state, action) => {
         filters: { ...state.filters, searchInput: action.text },
       };
     }
+
+    //filter through home page
+    case "SET_SHOW_DRESSES": {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          showDresses: true,
+          showBottoms: false,
+          showTops: false,
+        },
+      };
+    }
+    case "SET_SHOW_TOPS": {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          showTops: true,
+          showBottoms: false,
+          showDresses: false,
+        },
+      };
+    }
+    case "SET_SHOW_BOTTOMS": {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          showBottoms: true,
+          showTops: false,
+          showDresses: false,
+        },
+      };
+    }
     case "TOGGLE_SHOW_DRESSES": {
       return {
         ...state,
@@ -83,7 +118,7 @@ const reducer = (state, action) => {
         );
       }
 
-      if (state.priceRange !== "") {
+      if (state.filters.priceRange !== "") {
         newFilteredProducts = newFilteredProducts.filter(
           ({ price }) => Number(price) <= Number(state.filters.priceRange)
         );
