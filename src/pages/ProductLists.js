@@ -4,9 +4,10 @@ import { NavLink } from "react-router-dom";
 import Filters from "../component/Filters";
 import "../styles/product-list.css";
 import { useEffect } from "react";
+import Loading from "../component/Loading";
 
 export default function ProductList() {
-  const { state, dispatch } = useProductContext();
+  const { state, dispatch, getProductData } = useProductContext();
 
   // useEffect(() => {
   //   dispatch({ type: "FILTER_PRODUCTS" });
@@ -16,7 +17,16 @@ export default function ProductList() {
   //   state.filters.searchInput,
 
   // ]);
-  console.log("cart", state.cart);
+  useEffect(() => {
+    getProductData();
+  }, []);
+
+  console.log(state.isLoading);
+  //console.log("cart", state.cart);
+  if (state.isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="content">
       <div className="filter-container">

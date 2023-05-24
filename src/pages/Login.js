@@ -3,11 +3,13 @@ import { useLocation } from "react-router-dom";
 import LogoutButton from "../component/LoginLogoutButton";
 import { useProductContext } from "../context/product-context";
 import "../styles/login-page.css";
+import Loading from "../component/Loading";
 
 export default function Login() {
   const { state } = useProductContext();
   const location = useLocation();
   //console.log(location);
+
   return (
     <div className="login-main">
       <div className="form-background">

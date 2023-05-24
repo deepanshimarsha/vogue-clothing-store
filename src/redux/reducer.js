@@ -2,6 +2,12 @@ import { v4 as uuid } from "uuid";
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_IS_LOADING":
+      if (action.value === "FALSE") {
+        return { ...state, isLoading: false };
+      } else {
+        return { ...state, isLoading: true };
+      }
     case "SET_PRODUCT": {
       return { ...state, products: action.data, filteredProducts: action.data };
     }

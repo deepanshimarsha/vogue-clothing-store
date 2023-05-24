@@ -51,6 +51,7 @@ const ProductContextProvider = ({ children }) => {
 
   const token = localStorage.getItem("loginToken");
   const initialState = {
+    isLoading: true,
     products: [],
     filteredProducts: [],
     category: [],
@@ -87,12 +88,15 @@ const ProductContextProvider = ({ children }) => {
 
   //product listing
   const getProductData = async () => {
+    dispatch({ type: "SET_IS_LOADING", value: "TRUE" });
     try {
       const res = await fetch("/api/products");
       const resJson = await res.json();
       dispatch({ type: "SET_PRODUCT", data: resJson.products });
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "SET_IS_LOADING", value: "FALSE" });
     }
   };
 
@@ -194,22 +198,6 @@ const ProductContextProvider = ({ children }) => {
       const jsonData = await res.json();
 
       dispatch({ type: "SET_CART", data: jsonData.cart });
-      // if (state.isLoggedIn) {
-      //   const encodedToken = localStorage.getItem("loginToken");
-
-      //   const res = await fetch("/api/user/cart", {
-      //     method: "GET",
-      //     headers: {
-      //       authorization: encodedToken,
-      //     },
-      //   });
-
-      //   const jsonData = await res.json();
-
-      //   dispatch({ type: "SET_CART", data: jsonData.cart });
-      // } else {
-      //   navigate("/cart");
-      // }
     } catch (e) {
       console.error(e);
     }
@@ -388,8 +376,8 @@ const ProductContextProvider = ({ children }) => {
   ]);
 
   useEffect(() => {
-    getProductData();
     getCategoryData();
+    // getProductData();
   }, []);
 
   return (
@@ -397,6 +385,7 @@ const ProductContextProvider = ({ children }) => {
       value={{
         state,
         dispatch,
+        getProductData,
         getProductDetail,
         loginUser,
         signup,

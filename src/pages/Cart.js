@@ -3,6 +3,7 @@ import CartProductCard from "../component/CartProductCard";
 import { useProductContext } from "../context/product-context";
 import PriceDetailCard from "../component/PriceDetailCard";
 import "../styles/cart-page.css";
+import Loading from "../component/Loading";
 
 export default function () {
   const { state, getCart } = useProductContext();
