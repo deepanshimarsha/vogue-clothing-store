@@ -10,6 +10,7 @@
 .dress-category {
     text-align: left;
     display: flex;
+    width: 90%;
     
 }
 
@@ -86,12 +87,14 @@ background-color: #EA4C89;
 .home-btn button:focus {
   background-color: #F082AC;
 }
+ .img :hover{
+    cursor: pointer;
+ }
 
-
-.banner {
+/* .banner {
     padding: 70px;
     font-size: 40px;
-}
+} */
 
 /* 
 .category1{
@@ -122,3 +125,31 @@ background-color: #EA4C89;
     grid-template-columns: 1fr 1fr 1fr;
     top: 74.3%;
 } */
+
+.top-collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0px 10px;
+    
+    
+}
+
+.bottom-category {
+    text-align: left;
+    display: flex;
+    width: 100%;
+    
+}
+
+.banner button {
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 70px;
+    font-size: 40px;
+}
+
+.card :hover{
+    cursor: pointer;
+}
