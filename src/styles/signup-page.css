@@ -1,16 +1,16 @@
 .signup-container {
     display: flex;
     box-shadow: 0 30px 50px 0 rgba(0,0,0,.2);
-    width: 60%;
+    width: 90%;
     margin: auto;
     text-align: center;
     border-radius: 4px;
     height: 80vh;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .thumbnail-container{
-    width: 45%;
+    width: 70%;
     background-image: url("https://www.seekpng.com/png/detail/95-953129_fashion-illustration-clothing-fashion-design-the-nextgen-transparent.png");
     position: relative;
     
@@ -117,6 +117,7 @@ input[type=submit]{
     color: red;
     font-size: small;
     text-transform: lowercase;
+    margin-right: 30px;
   
 }
 
