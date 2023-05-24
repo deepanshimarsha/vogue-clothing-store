@@ -8,6 +8,17 @@ const reducer = (state, action) => {
       } else {
         return { ...state, isLoading: true };
       }
+
+    case "SET_ERROR": {
+      if (action.error === "") {
+        return { ...state, error: { showError: false, error: "" } };
+      } else {
+        return {
+          ...state,
+          error: { showError: true, error: action.error },
+        };
+      }
+    }
     case "SET_PRODUCT": {
       return { ...state, products: action.data, filteredProducts: action.data };
     }

@@ -2,19 +2,30 @@ import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useLocation } from "react-router-dom";
 import "../styles/signup-page.css";
+import { useEffect } from "react";
 
 export default function Signup() {
-  const { state, dispatch, signup } = useProductContext();
+  const { state, dispatch, signup, testUser } = useProductContext();
 
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    dispatch({ type: "SET_TEST_USER", data: testUser });
+    dispatch({ type: "SET_ERROR", error: "" });
+  }, []);
+
   const handleClick = () => {
-    signup();
-    dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
-    navigate(location?.state?.from);
+    if (state.user.email === testUser.email) {
+      dispatch({ type: "SET_ERROR", error: "Email is already registered!" });
+    } else {
+      signup();
+      dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
+      navigate(location?.state?.from);
+    }
   };
 
+  console.log(state.error);
   return (
     <div className="signup-container">
       <div className="thumbnail-container">
@@ -67,7 +78,12 @@ export default function Signup() {
             }
           ></input>
 
-          <label>Email</label>
+          <label className="email-label">
+            Email{" "}
+            <span className="email-error">
+              *{state.error.showError && state.error.error}
+            </span>
+          </label>
 
           <input
             value={state.user.password}

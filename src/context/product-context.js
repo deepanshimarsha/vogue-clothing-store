@@ -52,6 +52,7 @@ const ProductContextProvider = ({ children }) => {
   const token = localStorage.getItem("loginToken");
   const initialState = {
     isLoading: true,
+    error: { showError: false, error: "" },
     products: [],
     filteredProducts: [],
     category: [],

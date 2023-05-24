@@ -4,12 +4,15 @@ import LogoutButton from "../component/LoginLogoutButton";
 import { useProductContext } from "../context/product-context";
 import "../styles/login-page.css";
 import Loading from "../component/Loading";
+import { useEffect } from "react";
 
 export default function Login() {
-  const { state } = useProductContext();
+  const { state, dispatch, testUser } = useProductContext();
   const location = useLocation();
   //console.log(location);
-
+  useEffect(() => {
+    dispatch({ type: "SET_TEST_USER", data: testUser });
+  });
   return (
     <div className="login-main">
       <div className="form-background">

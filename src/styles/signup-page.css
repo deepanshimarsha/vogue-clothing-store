@@ -112,3 +112,15 @@ input[type=submit]{
     align-self: center;
 
 }
+
+.email-error{
+    color: red;
+    font-size: small;
+    text-transform: lowercase;
+  
+}
+
+.email-label {
+    display: flex;
+    justify-content: space-between;
+}
