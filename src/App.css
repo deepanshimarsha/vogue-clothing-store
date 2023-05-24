@@ -80,7 +80,7 @@ body {
   text-decoration: none;
 }
 .navbar-right {
-  margin-right: 50px;
+  margin-right: 70px;
 }
 .navbar-search {
   background-color: var(--white);
@@ -170,8 +170,8 @@ body {
 }
 
 .loader {
-  border: 10px solid #f3f3f3; 
-  border-top: 10px solid hsl(221, 70%, 53%); 
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid hsl(221, 70%, 53%); 
   border-radius: 50%;
   width: 50px;
   height: 50px;

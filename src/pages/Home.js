@@ -3,11 +3,23 @@ import CategoryCard from "../component/CategoryCard";
 import { useProductContext } from "../context/product-context";
 import "../styles/home-page.css";
 import { useNavigate, NavLink } from "react-router-dom";
+import Loading from "../component/Loading";
+import { useEffect } from "react";
 
 export default function Home() {
-  const { state, dispatch } = useProductContext();
+  const { state, dispatch, getCategoryData, getProductData } =
+    useProductContext();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getCategoryData();
+    getProductData();
+  }, []);
+
+  if (state.isLoading) {
+    return <Loading />;
+  }
 
   const handleShowNowBtn = () => {
     dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" });
@@ -26,6 +38,7 @@ export default function Home() {
     dispatch({ type: "SET_SHOW_BOTTOMS" });
     navigate("/products");
   };
+
   return (
     <div className="home-main">
       <div className="home-img">
@@ -49,6 +62,11 @@ export default function Home() {
 
       <div className="banner">
         <button onClick={handleClickForDress}> Shop For Dresses</button>
+        {state.category
+          .filter(({ categoryName }) => categoryName === "dresses")
+          .map(({ description }) => {
+            return <p>{description}</p>;
+          })}
       </div>
       <div className="dress-category">
         <div className="dress-img img">
@@ -85,6 +103,11 @@ export default function Home() {
 
       <div className="banner">
         <button onClick={handleClickForTop}>Shop For Tops</button>
+        {state.category
+          .filter(({ categoryName }) => categoryName === "tops")
+          .map(({ description }) => {
+            return <p>{description}</p>;
+          })}
       </div>
       <div className="top-category">
         <div className="left-collection-section">
@@ -130,6 +153,11 @@ export default function Home() {
 
       <div className="banner">
         <button onClick={handleClickForBottom}>Shop For Bottoms</button>
+        {state.category
+          .filter(({ categoryName }) => categoryName === "bottoms")
+          .map(({ description }) => {
+            return <p>{description}</p>;
+          })}
       </div>
       <div className="bottom-category">
         <div className="dress-img img">

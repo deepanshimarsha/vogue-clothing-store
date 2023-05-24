@@ -142,11 +142,21 @@ background-color: #EA4C89;
     
 }
 
+.banner {
+    font-family:  'UBFutura', -apple-system, blinkmacsystemfont, "Helvetica Neue", helvetica, segoe ui, arial, roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif !important;
+    padding-bottom: 50px;
+}
+
+.banner p {
+    font-style: italic;
+}
+
 .banner button {
     border: none;
     background-color: white;
     color: black;
     padding: 70px;
+    padding-bottom: 5px;
     font-size: 40px;
 }
 

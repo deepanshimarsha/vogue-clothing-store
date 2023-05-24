@@ -102,12 +102,15 @@ const ProductContextProvider = ({ children }) => {
 
   //category listing
   const getCategoryData = async () => {
+    dispatch({ type: "SET_IS_LOADING", value: "TRUE" });
     try {
       const res = await fetch("/api/categories");
       const resJson = await res.json();
       dispatch({ type: "SET_CATEGORY", data: resJson.categories });
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "SET_IS_LOADING", value: "FALSE" });
     }
   };
 
@@ -376,7 +379,7 @@ const ProductContextProvider = ({ children }) => {
   ]);
 
   useEffect(() => {
-    getCategoryData();
+    // getCategoryData();
     // getProductData();
   }, []);
 
@@ -386,6 +389,7 @@ const ProductContextProvider = ({ children }) => {
         state,
         dispatch,
         getProductData,
+        getCategoryData,
         getProductDetail,
         loginUser,
         signup,
