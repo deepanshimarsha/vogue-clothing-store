@@ -62,7 +62,7 @@ export default function ProductCard(item) {
             }}
           ></i>
         ) : (
-          <i class="fas fa-heart" style={{ fontSize: "24px" }}></i>
+          <i class="fa fa-heart" style={{ fontSize: "24px", color: "red" }}></i>
         )}
       </span>
     </div>
