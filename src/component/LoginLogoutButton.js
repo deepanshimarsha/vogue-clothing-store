@@ -9,7 +9,8 @@ export default function LoginLogoutButton({ location }) {
 
   //console.log(location?.state?.from?.pathname === "/login");
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (!state.isLoggedIn) {
       loginUser();
       if (
@@ -32,7 +33,11 @@ export default function LoginLogoutButton({ location }) {
   };
   return (
     <div>
-      <button className="login-btn" onClick={handleClick} type="submit">
+      <button
+        className="login-btn"
+        onClick={(e) => handleClick(e)}
+        type="submit"
+      >
         {state.isLoggedIn ? "Logout" : "Login with test credentials"}
       </button>
     </div>
