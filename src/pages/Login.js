@@ -18,15 +18,17 @@ export default function Login() {
       <div className="form-background">
         <h2>Login</h2>
         <div className="login-form">
-          <input type="text" value={state.user.email}></input>
-          <label>Email</label>
+          <form>
+            <input type="text" value={state.user.email}></input>
+            <label>Email</label>
 
-          <input type="password" value={state.user.password}></input>
-          <label>Password</label>
+            <input type="password" value={state.user.password}></input>
+            <label>Password</label>
 
-          <p>
-            <LogoutButton location={location} />
-          </p>
+            <p>
+              <LogoutButton location={location} />
+            </p>
+          </form>
         </div>
         <div className="create-account-wrap">
           <p>
