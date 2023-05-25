@@ -32,7 +32,7 @@ export default function LoginLogoutButton({ location }) {
   };
   return (
     <div>
-      <button className="login-btn" onClick={handleClick}>
+      <button className="login-btn" onClick={handleClick} type="submit">
         {state.isLoggedIn ? "Logout" : "Login with test credentials"}
       </button>
     </div>

@@ -13,12 +13,16 @@ export default function Login() {
   useEffect(() => {
     dispatch({ type: "SET_TEST_USER", data: testUser });
   });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="login-main">
       <div className="form-background">
         <h2>Login</h2>
         <div className="login-form">
-          <form>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <input
               type="text"
               value={state.user.email}
