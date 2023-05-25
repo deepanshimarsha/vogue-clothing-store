@@ -7,13 +7,9 @@ import { v4 as uuid } from "uuid";
 export default function AddressForm() {
   const { state, dispatch, dummyAddress } = useProductContext();
 
-  //console.log("1", state.newAddress);
-
-  //const [warning, setWarning] = useState("");
   const navigate = useNavigate();
 
   const handleClick = (e) => {
-    //console.log(state.newAddress);
     dispatch({ type: "ADD_ADDRESS", data: state.newAddress });
 
     navigate("/user_address");
@@ -25,7 +21,7 @@ export default function AddressForm() {
 
   useEffect(() => {
     dispatch({ type: "SET_EMPTY_ADDRESS" });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="address-container" style={{ marginTop: "20px" }}>

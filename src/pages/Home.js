@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     getCategoryData();
     getProductData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (state.isLoading) {
     return <Loading />;
@@ -75,20 +75,19 @@ export default function Home() {
           <div className="dress-collection">
             {state.products
               .filter(({ categoryName }) => categoryName === "dresses")
-              .map((item, idx) => {
-                if (idx <= 1) {
-                  return (
-                    <div className="dress-card card">
-                      <NavLink to={`/details/${item._id}`}>
-                        <img src={item.img} width="100%" alt="product" />
-                      </NavLink>
+              .filter((item, idx) => idx <= 1)
+              .map((item) => {
+                return (
+                  <div className="dress-card card">
+                    <NavLink to={`/details/${item._id}`}>
+                      <img src={item.img} width="100%" alt="product" />
+                    </NavLink>
 
-                      <p style={{ textAlign: "left", margin: "10px" }}>
-                        <b>Rs.{item.price}</b>
-                      </p>
-                    </div>
-                  );
-                }
+                    <p style={{ textAlign: "left", margin: "10px" }}>
+                      <b>Rs.{item.price}</b>
+                    </p>
+                  </div>
+                );
               })}
           </div>
           <img
@@ -102,6 +101,7 @@ export default function Home() {
         <button onClick={handleClickForTop}>Shop For Tops</button>
         {state.category
           .filter(({ categoryName }) => categoryName === "tops")
+
           .map(({ description }) => {
             return <p>{description}</p>;
           })}
@@ -111,24 +111,23 @@ export default function Home() {
           <div className="top-collection">
             {state.products
               .filter(({ categoryName }) => categoryName === "tops")
-              .map((item, idx) => {
-                if (idx <= 3) {
-                  return (
-                    <div
-                      className="card"
-                      style={{ width: "90%", marginLeft: "20px" }}
-                    >
-                      <NavLink to={`/details/${item._id}`}>
-                        {" "}
-                        <img src={item.img} width="100%" alt="product" />
-                      </NavLink>
+              .filter((item, idx) => idx <= 3)
+              .map((item) => {
+                return (
+                  <div
+                    className="card"
+                    style={{ width: "90%", marginLeft: "20px" }}
+                  >
+                    <NavLink to={`/details/${item._id}`}>
+                      {" "}
+                      <img src={item.img} width="100%" alt="product" />
+                    </NavLink>
 
-                      <p style={{ textAlign: "left", margin: "10px" }}>
-                        <b>Rs.{item.price}</b>
-                      </p>
-                    </div>
-                  );
-                }
+                    <p style={{ textAlign: "left", margin: "10px" }}>
+                      <b>Rs.{item.price}</b>
+                    </p>
+                  </div>
+                );
               })}
           </div>
           <img
@@ -173,24 +172,23 @@ export default function Home() {
           <div className="dress-collection">
             {state.products
               .filter(({ categoryName }) => categoryName === "bottoms")
-              .map((item, idx) => {
-                if (idx <= 3) {
-                  return (
-                    <div
-                      className="top-card card"
-                      style={{ width: "90%", marginLeft: "20px" }}
-                    >
-                      <NavLink to={`/details/${item._id}`}>
-                        {" "}
-                        <img src={item.img} width="100%" alt="product" />
-                      </NavLink>
+              .filter((item, idx) => idx <= 3)
+              .map((item) => {
+                return (
+                  <div
+                    className="top-card card"
+                    style={{ width: "90%", marginLeft: "20px" }}
+                  >
+                    <NavLink to={`/details/${item._id}`}>
+                      {" "}
+                      <img src={item.img} width="100%" alt="product" />
+                    </NavLink>
 
-                      <p style={{ textAlign: "left", marginLeft: "10px" }}>
-                        <b>Rs.{item.price}</b>
-                      </p>
-                    </div>
-                  );
-                }
+                    <p style={{ textAlign: "left", marginLeft: "10px" }}>
+                      <b>Rs.{item.price}</b>
+                    </p>
+                  </div>
+                );
               })}
           </div>
         </div>

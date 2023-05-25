@@ -8,7 +8,6 @@ export default function WishlistProductCard(item) {
 
     findInCart,
     addToCart,
-    findInWishlist,
   } = useProductContext();
 
   const { _id, title, price, img } = item;
