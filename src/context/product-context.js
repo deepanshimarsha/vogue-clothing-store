@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-import { formatDate } from "../backend//utils/authUtils";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../redux/reducer";
 import { useNavigate } from "react-router-dom";
@@ -75,7 +73,6 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  const navigate = useNavigate();
 
   //console.log("3", state.filteredProducts);
 
@@ -354,7 +351,7 @@ const ProductContextProvider = ({ children }) => {
 
   const findInCart = (itemId) => {
     //console.log(state.cart);
-    if (state.cart.length != 0) {
+    if (state.cart.length !== 0) {
       return state.cart.findIndex(({ _id }) => _id === itemId);
     } else {
       return -1;

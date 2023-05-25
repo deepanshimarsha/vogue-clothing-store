@@ -1,5 +1,5 @@
 export default function CategoryCard({ category_item }) {
-  const { id, categoryName, description } = category_item;
+  const { categoryName, description } = category_item;
 
   return (
     <div>

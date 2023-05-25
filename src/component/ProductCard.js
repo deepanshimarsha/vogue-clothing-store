@@ -1,4 +1,4 @@
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useNavigate } from "react-router-dom";
 import "../styles/product-card.css";
@@ -12,7 +12,7 @@ export default function ProductCard(item) {
     findInWishlist,
     removeFromWishlist,
   } = useProductContext();
-  const { _id, img, title, price, categoryName, details } = item;
+  const { _id, img, title, price } = item;
   //console.log(state.cart);
   const indexCart = findInCart(_id);
   const indexWishlist = findInWishlist(_id);
@@ -44,7 +44,10 @@ export default function ProductCard(item) {
 
       <p className="prod-title">{title}</p>
       <p className="price">Rs. {price}</p>
-      <button onClick={handleClickForCart}>
+      <button
+        onClick={handleClickForCart}
+        style={{ backgroundColor: indexCart === -1 ? "black" : "#4C4C4C" }}
+      >
         {indexCart === -1 ? "Add to Cart" : "Go to Cart"}
       </button>
       <span

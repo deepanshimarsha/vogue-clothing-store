@@ -5,7 +5,7 @@ import "../styles/product-list.css";
 import { useProductContext } from "../context/product-context";
 
 export default function Filters() {
-  const { state, dispatch } = useProductContext();
+  const { dispatch } = useProductContext();
   const handleClick = () => {
     dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" });
   };

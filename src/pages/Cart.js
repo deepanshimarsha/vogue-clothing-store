@@ -1,19 +1,12 @@
-import { useEffect } from "react";
 import CartProductCard from "../component/CartProductCard";
 import { useProductContext } from "../context/product-context";
 import PriceDetailCard from "../component/PriceDetailCard";
 import "../styles/cart-page.css";
-import Loading from "../component/Loading";
 
 export default function () {
-  const { state, getCart } = useProductContext();
+  const { state } = useProductContext();
 
-  console.log(state.cart);
   const cartLen = state.cart.length;
-
-  // useEffect(() => {
-  //   getCart();
-  // }, []);
 
   return (
     <div>

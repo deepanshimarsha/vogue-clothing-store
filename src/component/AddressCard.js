@@ -1,6 +1,5 @@
 export default function AddressCard(data) {
-  const { id, name, address, city, state, country, postal_code, phone_no } =
-    data;
+  const { name, address, city, state, country, postal_code, phone_no } = data;
   return (
     <div className="address-description">
       <h3>{name}</h3>

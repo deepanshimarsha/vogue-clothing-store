@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useEffect } from "react";
-import ProductCard from "../component/ProductCard";
+
 import "../styles/product-detail.css";
 import { useNavigate } from "react-router-dom";
 
@@ -14,8 +14,6 @@ export default function ProductDetail() {
   useEffect(() => {
     getProductDetail(productId);
   }, []);
-
-  console.log(state);
 
   return (
     <div>
@@ -38,7 +36,7 @@ export default function ProductDetail() {
         return (
           <div className="detail-container">
             {" "}
-            <img src={item.img} style={{ width: "40%" }} />
+            <img src={item.img} style={{ width: "40%" }} alt="product" />
             <div className="detail-description">
               <p className="detail-title">{item.title}</p>
 

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import LogoutButton from "../component/LoginLogoutButton";
 import { useProductContext } from "../context/product-context";
 import "../styles/login-page.css";
-import Loading from "../component/Loading";
+
 import { useEffect } from "react";
 
 export default function Login() {

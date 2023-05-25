@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import { useProductContext } from "../context/product-context";
 import WishlistProductCard from "../component/WishlistProductCard";
 import "../styles/wishlist.css";
 
 export default function Wishlist() {
-  const { state, getWishlist } = useProductContext();
+  const { state } = useProductContext();
   const wishlistLen = state.wishlist.length;
 
   // useEffect(() => {

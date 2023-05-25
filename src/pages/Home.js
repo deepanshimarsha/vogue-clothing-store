@@ -1,5 +1,3 @@
-import { Navigate } from "react-router-dom";
-import CategoryCard from "../component/CategoryCard";
 import { useProductContext } from "../context/product-context";
 import "../styles/home-page.css";
 import { useNavigate, NavLink } from "react-router-dom";
@@ -45,6 +43,7 @@ export default function Home() {
         <img
           src="https://t4.ftcdn.net/jpg/02/81/64/15/360_F_281641591_rNWtGEBhBMROKxPOBfalLnaoIpdG2i0j.jpg"
           width="100%"
+          alt="hero"
         />
 
         <div className="home-btn">
@@ -53,12 +52,6 @@ export default function Home() {
           <button onClick={handleShowNowBtn}>SHOP NOW</button>
         </div>
       </div>
-      {/* <div className="tag-block">
-        <img
-          src="https://img101.urbanic.com/v1/e9bbf61575394ab98e9ac7d5247a2f40.webp"
-          width="60%"
-        />
-      </div> */}
 
       <div className="banner">
         <button onClick={handleClickForDress}> Shop For Dresses</button>
@@ -74,6 +67,7 @@ export default function Home() {
             src="https://img101.urbanic.com/v1/876019096d5c49d6b8323b26a173f8a2.webp"
             width="760px"
             role="button"
+            alt="dress-collection"
             onClick={handleClickForDress}
           />
         </div>
@@ -86,7 +80,7 @@ export default function Home() {
                   return (
                     <div className="dress-card card">
                       <NavLink to={`/details/${item._id}`}>
-                        <img src={item.img} width="100%" />
+                        <img src={item.img} width="100%" alt="product" />
                       </NavLink>
 
                       <p style={{ textAlign: "left", margin: "10px" }}>
@@ -97,7 +91,10 @@ export default function Home() {
                 }
               })}
           </div>
-          <img src="https://img101.urbanic.com/v1/2b9dc066fe6c408cbbed9e5082d2594d.webp" />
+          <img
+            src="https://img101.urbanic.com/v1/2b9dc066fe6c408cbbed9e5082d2594d.webp"
+            alt="filler"
+          />
         </div>
       </div>
 
@@ -123,7 +120,7 @@ export default function Home() {
                     >
                       <NavLink to={`/details/${item._id}`}>
                         {" "}
-                        <img src={item.img} width="100%" />
+                        <img src={item.img} width="100%" alt="product" />
                       </NavLink>
 
                       <p style={{ textAlign: "left", margin: "10px" }}>
@@ -137,6 +134,7 @@ export default function Home() {
           <img
             src="https://img101.urbanic.com/v1/e9bbf61575394ab98e9ac7d5247a2f40.webp"
             width="100%"
+            alt="bottom-collection"
             style={{ marginTop: "20px" }}
           />
         </div>
@@ -146,6 +144,7 @@ export default function Home() {
             src="https://img101.urbanic.com/v1/9e70d04cbcc64331a7706e317653f08b.webp"
             width="850px"
             role="button"
+            alt="banner"
             onClick={handleClickForTop}
           />
         </div>
@@ -166,6 +165,7 @@ export default function Home() {
             width="820px"
             role="button"
             onClick={handleClickForBottom}
+            alt="top-collection"
           />
         </div>
 
@@ -182,7 +182,7 @@ export default function Home() {
                     >
                       <NavLink to={`/details/${item._id}`}>
                         {" "}
-                        <img src={item.img} width="100%" />
+                        <img src={item.img} width="100%" alt="product" />
                       </NavLink>
 
                       <p style={{ textAlign: "left", marginLeft: "10px" }}>
@@ -193,64 +193,8 @@ export default function Home() {
                 }
               })}
           </div>
-          {/* <img
-            src="https://static2.urbanic.com/images/feeds/1673951226657/20230117-182631.jpg"
-            width="600px"
-            style={{ margin: "0px 5px 40px 10px" }}
-          /> */}
         </div>
       </div>
-      {/* <div className="category">
-        <div className="tops-collection">
-          {state.products
-            .filter(({ categoryName }) => categoryName === "tops")
-            .map((item, idx) => {
-              if (idx <= 2) {
-                return (
-                  <div>
-                    <img src={item.img} width="100%" />
-                    <p style={{ textAlign: "left", margin: "10px" }}>
-                      <b>Rs.{item.price}</b>
-                    </p>
-                  </div>
-                );
-              }
-            })}
-        </div> */}
-
-      {/* <div className="dresses-collection">
-          {state.products
-            .filter(({ categoryName }) => categoryName === "dresses")
-            .map((item, idx) => {
-              if (idx <= 2) {
-                return (
-                  <div>
-                    <img src={item.img} width="100%" />
-                    <p style={{ textAlign: "left", margin: "10px" }}>
-                      <b>Rs.{item.price}</b>
-                    </p>
-                  </div>
-                );
-              }
-            })}
-            </div> */}
-
-      {/* <div className="bottoms-collection">
-            {state.products
-              .filter(({ categoryName }) => categoryName === "bottoms")
-              .map((item, idx) => {
-                if (idx <= 2) {
-                  return (
-                    <div>
-                      <img src={item.img} width="100%" />
-                      <p style={{ textAlign: "left", margin: "10px" }}>
-                        <b>Rs.{item.price}</b>
-                      </p>
-                    </div>
-                  );
-                }
-              })}
-          </div> */}
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useProductContext } from "../context/product-context";
 import AddressCard from "./AddressCard";
 import { NavLink } from "react-router-dom";

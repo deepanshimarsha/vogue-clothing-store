@@ -2,8 +2,8 @@
     display: flex;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    right: 30%;
-
+    right: 5%;
+    position: relative;
 
 }
 
@@ -79,4 +79,25 @@ button:hover {
     gap: 1rem;
     
 }
-
+.icon-btn {
+    color: var(--lightGrey);
+    position: absolute;
+    display: inline-block;
+    padding: 0.4rem 0.5rem;
+    font-weight: var(--font-semiBold);
+    font-size: 1rem;
+    right: 5%;
+    top: 2%;
+    background-color: white;
+    width: 20px;
+    height: 70px;
+    border-radius: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    /* padding-bottom: 40px;
+    padding-right: 5px; */
+    border: none;
+    opacity: 0.8;
+    margin: 2px;
+    
+}

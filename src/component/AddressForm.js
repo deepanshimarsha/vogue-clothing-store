@@ -1,11 +1,11 @@
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../styles/address.css";
 import { v4 as uuid } from "uuid";
 
 export default function AddressForm() {
-  const { state, dispatch, dummyAddress, emptyAddress } = useProductContext();
+  const { state, dispatch, dummyAddress } = useProductContext();
 
   //console.log("1", state.newAddress);
 

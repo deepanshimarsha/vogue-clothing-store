@@ -1,7 +1,7 @@
 import { useProductContext } from "../context/product-context";
 
 export default function SortFilter() {
-  const { state, dispatch } = useProductContext();
+  const { dispatch } = useProductContext();
   return (
     <div>
       <div className="sort-label">

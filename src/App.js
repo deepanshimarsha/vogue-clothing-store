@@ -1,11 +1,5 @@
 import "./App.css";
-import {
-  Routes,
-  Route,
-  NavLink,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import Mockman from "mockman-js";
 
 import Home from "./pages/Home";
@@ -23,12 +17,10 @@ import Checkout from "./pages/Checkout";
 import "./styles/home-page.css";
 import UserAddress from "./component/UserAddress";
 import { useLocation } from "react-router-dom";
-import { formatDate } from "./backend/utils/authUtils";
 
 function App() {
-  const { getCart, state, dispatch } = useProductContext();
+  const { state, dispatch } = useProductContext();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navLinkStyle = ({ isActive }) => {
     if (isActive) {
@@ -37,7 +29,7 @@ function App() {
       return { color: "black" };
     }
   };
-  const handleLogin = () => {};
+
   return (
     <div className="App">
       <nav className="navbar">

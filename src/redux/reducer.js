@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_IS_LOADING":

@@ -1,4 +1,4 @@
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useLocation } from "react-router-dom";
 import "../styles/signup-page.css";

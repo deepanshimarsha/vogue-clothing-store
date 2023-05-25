@@ -34,7 +34,11 @@ export default function CartProductCard(item) {
 
   return (
     <div className="cart-card-container">
-      <img src={img} style={{ width: "25%" }} />
+      {/* <div className="icon-btn" onClick={() => removeFromCart(_id)}>
+        <i class="fa fa-close" style={{ fontSize: "24px", color: "black" }}></i>
+      </div> */}
+
+      <img src={img} style={{ width: "25%" }} alt="product" />
 
       <div className="cart-product-description">
         <p className="cart-product-title">{title}</p>

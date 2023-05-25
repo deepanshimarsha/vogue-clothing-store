@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/login-page.css";
 
 export default function LoginLogoutButton({ location }) {
-  const { state, dispatch, loginUser, testUser } = useProductContext();
+  const { state, dispatch, loginUser } = useProductContext();
 
   const navigate = useNavigate();
 

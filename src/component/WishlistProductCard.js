@@ -5,7 +5,7 @@ import "../styles/wishlist.css";
 export default function WishlistProductCard(item) {
   const {
     removeFromWishlist,
-    state,
+
     findInCart,
     addToCart,
     findInWishlist,
@@ -27,13 +27,6 @@ export default function WishlistProductCard(item) {
   };
 
   const indexWishlist = findInWishlist(_id);
-  const handleClickForWishlist = () => {
-    if (indexWishlist === -1) {
-      addToWishlist(item);
-    } else {
-      removeFromWishlist(item._id);
-    }
-  };
 
   return (
     <div className="wishlist-card">
@@ -45,7 +38,7 @@ export default function WishlistProductCard(item) {
         <i class="fa fa-close" style={{ fontSize: "24px", color: "black" }}></i>
       </span>
       <NavLink to={`/details/${item._id}`}>
-        <img src={img} style={{ width: "100%" }} />
+        <img src={img} style={{ width: "100%" }} alt="product" />
       </NavLink>
 
       <p className="wishlist-title">{title}</p>
