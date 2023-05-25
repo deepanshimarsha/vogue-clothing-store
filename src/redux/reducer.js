@@ -1,3 +1,4 @@
+/*eslint no-fallthrough: "error"*/
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_IS_LOADING":
@@ -168,9 +169,9 @@ const reducer = (state, action) => {
       }
     }
 
+    // eslint-disable-next-line
     case "SET_PRODUCT_DETAIL": {
       return { ...state, productDetail: [action.data] };
-      /* falls through */
     }
     case "SET_CART": {
       return { ...state, cart: action.data };
@@ -202,9 +203,9 @@ const reducer = (state, action) => {
       }
     }
 
+    // eslint-disable-next-line
     case "SET_EMPTY_ADDRESS": {
       return { ...state, newAddress: {} };
-      /* falls through */
     }
     case "CREATE_ADDRESS": {
       if (action.field === "USER_NAME") {
@@ -258,9 +259,9 @@ const reducer = (state, action) => {
       }
     }
 
+    // eslint-disable-next-line
     case "CLEAR_TEST_ADDRESS_ON_SIGNUP": {
       return { ...state, address: [] };
-      /* falls through */
     }
     case "ADD_ADDRESS": {
       return { ...state, address: [...state.address, action.data] };
