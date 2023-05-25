@@ -13,7 +13,7 @@ export default function Signup() {
   useEffect(() => {
     dispatch({ type: "SET_TEST_USER", data: testUser });
     dispatch({ type: "SET_ERROR", error: "" });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClick = () => {
     if (state.user.email === testUser.email) {

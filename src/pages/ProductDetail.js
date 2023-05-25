@@ -13,7 +13,7 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   useEffect(() => {
     getProductDetail(productId);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

@@ -9,17 +9,9 @@ import Loading from "../component/Loading";
 export default function ProductList() {
   const { state, getProductData } = useProductContext();
 
-  // useEffect(() => {
-  //   dispatch({ type: "FILTER_PRODUCTS" });
-  // }, [
-  //   state.filters.sortBy,
-  //   state.filters.priceRange,
-  //   state.filters.searchInput,
-
-  // ]);
   useEffect(() => {
     getProductData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   console.log(state.isLoading);
   //console.log("cart", state.cart);
