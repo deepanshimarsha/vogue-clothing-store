@@ -19,10 +19,18 @@ export default function Login() {
         <h2>Login</h2>
         <div className="login-form">
           <form>
-            <input type="text" value={state.user.email}></input>
+            <input
+              type="text"
+              value={state.user.email}
+              autocomplete="on"
+            ></input>
             <label>Email</label>
 
-            <input type="password" value={state.user.password}></input>
+            <input
+              type="password"
+              value={state.user.password}
+              autocomplete="on"
+            ></input>
             <label>Password</label>
 
             <p>

@@ -39,64 +39,70 @@ export default function Signup() {
         <h3>CREATE ACCOUNT</h3>
 
         <div class="signup_group">
-          <input
-            value={state.user.firstName}
-            type="text"
-            onChange={(e) =>
-              dispatch({
-                type: "SET_USER",
-                field: "FIRST_NAME",
-                value: e.target.value,
-              })
-            }
-          ></input>
-          <label>First Name</label>
+          <form>
+            <input
+              value={state.user.firstName}
+              type="text"
+              autocomplete="on"
+              onChange={(e) =>
+                dispatch({
+                  type: "SET_USER",
+                  field: "FIRST_NAME",
+                  value: e.target.value,
+                })
+              }
+            ></input>
+            <label>First Name</label>
 
-          <input
-            value={state.user.lastName}
-            type="text"
-            onChange={(e) =>
-              dispatch({
-                type: "SET_USER",
-                field: "LAST_NAME",
-                value: e.target.value,
-              })
-            }
-          ></input>
+            <input
+              value={state.user.lastName}
+              type="text"
+              autocomplete="on"
+              onChange={(e) =>
+                dispatch({
+                  type: "SET_USER",
+                  field: "LAST_NAME",
+                  value: e.target.value,
+                })
+              }
+            ></input>
 
-          <label>Last Name</label>
+            <label>Last Name</label>
 
-          <input
-            value={state.user.email}
-            type="text"
-            onChange={(e) =>
-              dispatch({
-                type: "SET_USER",
-                field: "EMAIL",
-                value: e.target.value,
-              })
-            }
-          ></input>
+            <input
+              value={state.user.email}
+              type="text"
+              autocomplete="on"
+              onChange={(e) =>
+                dispatch({
+                  type: "SET_USER",
+                  field: "EMAIL",
+                  value: e.target.value,
+                })
+              }
+            ></input>
 
-          <label className="email-label">
-            Email{" "}
-            <span className="email-error">
-              *{state.error.showError && state.error.error}
-            </span>
-          </label>
+            <label className="email-label">
+              Email{" "}
+              <span className="email-error">
+                *{state.error.showError && state.error.error}
+              </span>
+            </label>
 
-          <input
-            value={state.user.password}
-            type="password"
-            onChange={(e) =>
-              dispatch({
-                type: "SET_USER",
-                field: "PASSWORD",
-                value: e.target.value,
-              })
-            }
-          ></input>
-          <label>Password</label>
+            <input
+              value={state.user.password}
+              type="password"
+              autocomplete="on"
+              onChange={(e) =>
+                dispatch({
+                  type: "SET_USER",
+                  field: "PASSWORD",
+                  value: e.target.value,
+                })
+              }
+            ></input>
+            <label>Password</label>
+          </form>
         </div>
 
         <div class="signup-footer">
