@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../redux/reducer";
-import { useNavigate } from "react-router-dom";
 
 const ProductContext = createContext(null);
 

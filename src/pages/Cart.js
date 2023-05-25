@@ -3,7 +3,7 @@ import { useProductContext } from "../context/product-context";
 import PriceDetailCard from "../component/PriceDetailCard";
 import "../styles/cart-page.css";
 
-export default function () {
+export default function Cart() {
   const { state } = useProductContext();
 
   const cartLen = state.cart.length;

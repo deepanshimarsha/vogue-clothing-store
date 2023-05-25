@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import Mockman from "mockman-js";
 
 import Home from "./pages/Home";

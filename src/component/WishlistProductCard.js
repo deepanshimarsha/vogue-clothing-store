@@ -9,7 +9,6 @@ export default function WishlistProductCard(item) {
     findInCart,
     addToCart,
     findInWishlist,
-    addToWishlist,
   } = useProductContext();
 
   const { _id, title, price, img } = item;
@@ -25,8 +24,6 @@ export default function WishlistProductCard(item) {
       navigate("/cart");
     }
   };
-
-  const indexWishlist = findInWishlist(_id);
 
   return (
     <div className="wishlist-card">
