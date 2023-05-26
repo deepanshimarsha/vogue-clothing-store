@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useEffect } from "react";
 import "../styles/address.css";
@@ -8,11 +8,32 @@ export default function AddressForm() {
   const { state, dispatch, dummyAddress } = useProductContext();
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    dispatch({ type: "SET_ERROR", error: "" });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClick = (e) => {
-    dispatch({ type: "ADD_ADDRESS", data: state.newAddress });
+    if (state.newAddress.length === 0) {
+      dispatch({ type: "SET_ERROR", error: "Fill The Form" });
+    }
 
-    navigate("/user_address");
+    if (
+      typeof state.newAddress.name === "undefined" ||
+      typeof state.newAddress.postal_code === "undefined" ||
+      typeof state.newAddress.phone_no === "undefined" ||
+      typeof state.newAddress.address === "undefined" ||
+      typeof state.newAddress.city === "undefined" ||
+      typeof state.newAddress.state === "undefined" ||
+      typeof state.newAddress.country === "undefined"
+    ) {
+      dispatch({ type: "SET_ERROR", error: "Fill all the required field" });
+    } else {
+      dispatch({ type: "ADD_ADDRESS", data: state.newAddress });
+
+      navigate("/user_address");
+    }
   };
 
   const handleClickForCancel = () => {
@@ -26,7 +47,9 @@ export default function AddressForm() {
   return (
     <div className="address-container" style={{ marginTop: "20px" }}>
       <h1 className="address-title">Add New Address</h1>
-
+      <span className="address-error">
+        {state.error.showError && state.error.error}
+      </span>
       <form className="address-form">
         <input
           required
@@ -75,7 +98,7 @@ export default function AddressForm() {
         ></input>
         <input
           required
-          placeholder="CREATE_ADDRESS"
+          placeholder="Enter Country"
           onChange={(e) =>
             dispatch({
               type: "CREATE_ADDRESS",
@@ -114,7 +137,11 @@ export default function AddressForm() {
           <button
             onClick={() => {
               dispatch({ type: "ADD_ADDRESS", data: dummyAddress });
-              navigate("/user_address");
+              if (location?.state?.from) {
+                navigate(location?.state?.from);
+              } else {
+                navigate("/user_address");
+              }
             }}
           >
             Add Dummy Address

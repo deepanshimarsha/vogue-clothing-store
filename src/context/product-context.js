@@ -25,7 +25,7 @@ const ProductContextProvider = ({ children }) => {
   const dummyAddress = {
     id: "test",
     name: "Admin",
-    address: "33 , MG Road",
+    address: "3110 , MG Road",
     city: "Maharashtra",
     state: "Pune",
     country: "India",
@@ -58,7 +58,7 @@ const ProductContextProvider = ({ children }) => {
     wishlist: [],
     address: [testAddress],
     newAddress: {},
-    checkoutAddress: testAddress,
+    checkoutAddress: {},
     isLoggedIn: token ? true : false,
     user: testUser,
     filters: {
@@ -404,6 +404,7 @@ const ProductContextProvider = ({ children }) => {
         removeAddress,
         dummyAddress,
         emptyAddress,
+        testAddress,
       }}
     >
       {children}

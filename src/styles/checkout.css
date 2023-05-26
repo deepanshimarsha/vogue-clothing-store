@@ -1,0 +1,88 @@
+.order-card {
+/* position: fixed; */
+margin-left: 150px;
+
+width: 40%;
+left: 10%;
+bottom: 2%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+text-align: left;
+padding: 10px 20px;
+padding-top: 40px;
+}
+
+
+.order-heading {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: 	#5A5A5A;
+}
+.address-lists {
+    position: absolute;
+ 
+    left: 55%;
+    margin: 30px;
+    margin-top:0px ;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.address-card {
+    display: flex;
+    height: 30vh;
+    
+  
+}
+
+.address-card input {
+    height: 7vh;
+    align-self: flex-start;
+    margin-right: 20px;
+}
+
+.checkout-address-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 14px;
+    height: 26vh;
+    width: 80%;
+}
+
+.checkout-address-card button{
+    border: none;
+    padding: 10px;
+    width: 70px;
+}
+.order-detail p  {
+    display: flex;
+    justify-content: space-between;
+}
+.price-detail p{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.place-order-btn{
+    border: none;
+    outline: 0;
+    padding: 10px 6px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.add-address{
+    color: black;
+    margin-top: 15px;
+}

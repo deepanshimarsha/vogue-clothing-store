@@ -1,17 +1,24 @@
 import { useProductContext } from "../context/product-context";
 import AddressCard from "./AddressCard";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import "../styles/checkout.css";
 
 export default function SelectAddress() {
   const { state, dispatch } = useProductContext();
-  console.log(state.checkoutAddress);
-
+  const location = useLocation();
+  //console.log(state.checkoutAddress);
+  const handleClick = (id) => {
+    const selectedAddress = state.address.filter((item) => item.id === id);
+    dispatch({ type: "SET_CHECKOUT_ADDRESS", data: selectedAddress });
+  };
   return (
-    <div>
+    <div className="address-lists">
+      <span className="order-heading">Select Checkout Address</span>
+
       {state.address.map((user_address) => {
         return (
           <div>
-            <input
+            {/* <input
               type="radio"
               name="checkout-address"
               value={JSON.stringify(user_address)}
@@ -21,15 +28,19 @@ export default function SelectAddress() {
                   data: e.target.value,
                 });
               }}
-            ></input>
-            <label>
+            ></input> */}
+            <div className="checkout-address-card">
               <AddressCard {...user_address} />
-            </label>
+              <button onClick={() => handleClick(user_address.id)}>Add</button>
+            </div>
           </div>
         );
       })}
-
-      <NavLink to="/address_form">Add New Address</NavLink>
+      <div className="add-address">
+        <NavLink to="/address_form" state={{ from: location }}>
+          Add New Address
+        </NavLink>
+      </div>
     </div>
   );
 }
