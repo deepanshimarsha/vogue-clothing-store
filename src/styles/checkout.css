@@ -27,6 +27,7 @@ padding-top: 40px;
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-left: 60px;
 }
 
 .address-card {
@@ -48,6 +49,7 @@ padding-top: 40px;
     font-size: 14px;
     height: 26vh;
     width: 80%;
+    
 }
 
 .checkout-address-card button{

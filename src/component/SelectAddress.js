@@ -18,17 +18,6 @@ export default function SelectAddress() {
       {state.address.map((user_address) => {
         return (
           <div>
-            {/* <input
-              type="radio"
-              name="checkout-address"
-              value={JSON.stringify(user_address)}
-              onChange={(e) => {
-                dispatch({
-                  type: "SET_CHECKOUT_ADDRESS",
-                  data: e.target.value,
-                });
-              }}
-            ></input> */}
             <div className="checkout-address-card">
               <AddressCard {...user_address} />
               <button onClick={() => handleClick(user_address.id)}>Add</button>
