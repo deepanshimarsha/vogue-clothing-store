@@ -164,12 +164,12 @@ const ProductContextProvider = ({ children }) => {
         email: email,
         password: password,
       };
-
+      console.log(JSON.stringify(data));
       const res = await fetch("/api/auth/login", {
         method: "POST", // or 'PUT'
         body: JSON.stringify(data),
       });
-
+      console.log(res);
       const { encodedToken } = await res.json();
       localStorage.setItem("loginToken", encodedToken);
 

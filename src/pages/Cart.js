@@ -3,10 +3,9 @@ import { useProductContext } from "../context/product-context";
 import { ToastContainer } from "react-toastify";
 import PriceDetailCard from "../component/PriceDetailCard";
 import "../styles/cart-page.css";
-import { useEffect } from "react";
 
 export default function Cart() {
-  const { state, getCart } = useProductContext();
+  const { state } = useProductContext();
 
   const cartLen = state.cart.length;
 

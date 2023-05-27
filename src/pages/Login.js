@@ -12,7 +12,7 @@ export default function Login() {
   console.log("location", location);
   useEffect(() => {
     dispatch({ type: "SET_TEST_USER", data: testUser });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmit = (event) => {
     event.preventDefault();

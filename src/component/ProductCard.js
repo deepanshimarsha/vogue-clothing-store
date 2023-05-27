@@ -1,4 +1,4 @@
-import { NavLink, useLocation, Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductContext } from "../context/product-context";
@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/product-card.css";
 
 export default function ProductCard(item) {
-  const location = useLocation();
   const {
     state,
     addToCart,
