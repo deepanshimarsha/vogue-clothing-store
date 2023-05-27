@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductContext } from "../context/product-context";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/product-card.css";
 
 export default function ProductCard(item) {
-  const notify = () => toast("Wow so easy!");
+  const location = useLocation();
   const {
     state,
     addToCart,
@@ -22,13 +22,18 @@ export default function ProductCard(item) {
   const navigate = useNavigate();
 
   const handleClickForCart = () => {
-    if (indexCart === -1) {
-      addToCart(item);
-      toast("Added to cart");
+    if (!state.isLoggedIn) {
+      navigate("/login");
+      // <Navigate to="/login" state={{ from: location }} />;
     } else {
-      navigate("/cart");
+      if (indexCart === -1) {
+        addToCart(item);
+        toast("Added to cart");
+      } else {
+        navigate("/cart");
+      }
+      //console.log(state.cart);
     }
-    console.log(state.cart);
   };
 
   const handleClickForWishlist = () => {

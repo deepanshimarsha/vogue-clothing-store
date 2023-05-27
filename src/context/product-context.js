@@ -376,9 +376,10 @@ const ProductContextProvider = ({ children }) => {
   ]);
 
   useEffect(() => {
-    // getCategoryData();
-    // getProductData();
-  }, []);
+    if (state.isLoggedIn) {
+      loginUser();
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <ProductContext.Provider

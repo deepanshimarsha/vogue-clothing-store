@@ -22,7 +22,10 @@ export default function ProductList() {
 
   return (
     <div className="content">
-      <ToastContainer />
+      <div className="toastify">
+        <ToastContainer />
+      </div>
+
       <div className="filter-container">
         <Filters />
       </div>

@@ -9,10 +9,10 @@ import { useEffect } from "react";
 export default function Login() {
   const { state, dispatch, testUser } = useProductContext();
   const location = useLocation();
-  //console.log(location);
+  console.log("location", location);
   useEffect(() => {
     dispatch({ type: "SET_TEST_USER", data: testUser });
-  });
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();

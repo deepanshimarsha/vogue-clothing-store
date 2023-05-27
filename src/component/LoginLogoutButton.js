@@ -18,11 +18,16 @@ export default function LoginLogoutButton({ location }) {
         location?.state?.from?.pathname === "/signup"
       ) {
         navigate("/");
+      }
+      if (!location?.state) {
+        navigate("/products");
       } else {
         navigate(location?.state?.from);
       }
     } else {
       localStorage.removeItem("loginToken");
+      dispatch({ type: "CLEAR_CART" });
+      dispatch({ type: "CLEAR_WISHLIST" });
       // if (state.user !== testUser) {
       //   dispatch({ type: "SET_TEST_USER", data: testUser });
       // }

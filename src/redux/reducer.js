@@ -176,8 +176,15 @@ const reducer = (state, action) => {
     case "SET_CART": {
       return { ...state, cart: action.data };
     }
+
+    case "CLEAR_CART": {
+      return { ...state, cart: [] };
+    }
     case "SET_WISHLIST": {
       return { ...state, wishlist: action.data };
+    }
+    case "CLEAR_WISHLIST": {
+      return { ...state, wishlist: [] };
     }
 
     case "TOGGLE_IS_LOGGED_IN": {

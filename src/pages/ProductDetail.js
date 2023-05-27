@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "../styles/product-detail.css";
 import { useNavigate } from "react-router-dom";
@@ -17,12 +19,14 @@ export default function ProductDetail() {
 
   return (
     <div>
+      <ToastContainer />
       {state.productDetail.map((item) => {
         const indexCart = findInCart(item._id);
 
         const handleClickForCart = () => {
           if (indexCart === -1) {
             addToCart(item);
+            toast("Added to cart");
           } else {
             navigate("/cart");
           }

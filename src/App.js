@@ -21,7 +21,7 @@ import { useLocation } from "react-router-dom";
 function App() {
   const { state, dispatch } = useProductContext();
   const location = useLocation();
-
+  console.log("cart", state.cart);
   const navLinkStyle = ({ isActive }) => {
     if (isActive) {
       return { color: "black", fontWeight: "bold" };
@@ -77,6 +77,8 @@ function App() {
                       onClick={() => {
                         dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
                         localStorage.removeItem("loginToken");
+                        dispatch({ type: "CLEAR_CART" });
+                        dispatch({ type: "CLEAR_WISHLIST" });
                       }}
                     >
                       Logout
