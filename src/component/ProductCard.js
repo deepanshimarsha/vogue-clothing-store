@@ -66,11 +66,10 @@ export default function ProductCard(item) {
       >
         {indexWishlist === -1 ? (
           <i
-            class="far fa-heart"
+            class="fa fa-heart-o"
             aria-hidden="true"
             style={{
               fontSize: "24px",
-              color: "black",
             }}
           ></i>
         ) : (

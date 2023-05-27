@@ -76,8 +76,8 @@ function App() {
                 <div class="dropdown">
                   <button class="dropbtn">
                     <i
-                      class="fas fa-user-circle"
-                      style={{ fontSize: "20px", padding: "5px" }}
+                      class="fa fa-user"
+                      style={{ fontSize: "25px", padding: "5px" }}
                     ></i>
                   </button>
                   <div class="dropdown-content">
