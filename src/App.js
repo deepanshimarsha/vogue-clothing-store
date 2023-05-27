@@ -16,11 +16,12 @@ import AddressForm from "./component/AddressForm";
 import Checkout from "./pages/Checkout";
 import "./styles/home-page.css";
 import UserAddress from "./component/UserAddress";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function App() {
   const { state, dispatch } = useProductContext();
   const location = useLocation();
+  const navigate = useNavigate();
   console.log("cart", state.cart);
   const navLinkStyle = ({ isActive }) => {
     if (isActive) {
@@ -41,9 +42,10 @@ function App() {
           <input
             className="navbar-search"
             placeholder="Search"
-            onChange={(e) =>
-              dispatch({ type: "SET_SEARCH_INPUT", text: e.target.value })
-            }
+            onChange={(e) => {
+              dispatch({ type: "SET_SEARCH_INPUT", text: e.target.value });
+              navigate("/products");
+            }}
           ></input>
           <div className="navbar-right">
             {" "}
