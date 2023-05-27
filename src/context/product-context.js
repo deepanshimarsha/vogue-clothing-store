@@ -5,10 +5,10 @@ const ProductContext = createContext(null);
 
 const ProductContextProvider = ({ children }) => {
   const testUser = {
-    firstName: "Adarsh",
-    lastName: "Balika",
-    email: "adarshbalika@gmail.com",
-    password: "adarshbalika",
+    firstName: "Deepanshi",
+    lastName: "Sharma",
+    email: "deepanshisharma2510@gmail.com",
+    password: "test",
   };
 
   const testAddress = {

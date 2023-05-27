@@ -1,5 +1,6 @@
 import CartProductCard from "../component/CartProductCard";
 import { useProductContext } from "../context/product-context";
+import { ToastContainer } from "react-toastify";
 import PriceDetailCard from "../component/PriceDetailCard";
 import "../styles/cart-page.css";
 
@@ -10,6 +11,7 @@ export default function Cart() {
 
   return (
     <div>
+      <ToastContainer />
       {cartLen !== 0 ? (
         <div className="cart-main">
           <div className="product-main">

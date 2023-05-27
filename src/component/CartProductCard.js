@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useProductContext } from "../context/product-context";
 import "../styles/cart-product-card.css";
 import "../styles/cart-page.css";
@@ -19,6 +20,7 @@ export default function CartProductCard(item) {
   const handleClickForWishlist = () => {
     if (indexWishlist === -1) {
       addToWishlist(item);
+      toast("Added to wishlist");
     } else {
       navigate("/wishlist");
     }

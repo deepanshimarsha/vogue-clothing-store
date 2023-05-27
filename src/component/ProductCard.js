@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useProductContext } from "../context/product-context";
 import { useNavigate } from "react-router-dom";
 import "../styles/product-card.css";
 
 export default function ProductCard(item) {
+  const notify = () => toast("Wow so easy!");
   const {
     state,
     addToCart,
@@ -21,6 +24,7 @@ export default function ProductCard(item) {
   const handleClickForCart = () => {
     if (indexCart === -1) {
       addToCart(item);
+      toast("Added to cart");
     } else {
       navigate("/cart");
     }
@@ -30,6 +34,7 @@ export default function ProductCard(item) {
   const handleClickForWishlist = () => {
     if (indexWishlist === -1) {
       addToWishlist(item);
+      toast("Added to wishlist");
     } else {
       removeFromWishlist(item._id);
     }

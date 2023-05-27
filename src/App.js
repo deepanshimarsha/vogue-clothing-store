@@ -51,10 +51,10 @@ function App() {
               Our Products
             </NavLink>
             <NavLink className="nav-link" to="/wishlist" style={navLinkStyle}>
-              Wishlist
+              <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
             </NavLink>
             <NavLink className="nav-link" to="/cart" style={navLinkStyle}>
-              Cart
+              <i class="fa fa-shopping-cart" style={{ fontSize: "24px" }}></i>
             </NavLink>
             {state.isLoggedIn ? (
               <div className="dropdown-main">
@@ -65,10 +65,12 @@ function App() {
                       class="fas fa-user-circle"
                       style={{ fontSize: "20px", padding: "5px" }}
                     ></i>
-                    {state.user.firstName}
                   </button>
                   <div class="dropdown-content">
-                    <NavLink to="/user_account">Profile</NavLink>
+                    <NavLink to="/user_account">
+                      {" "}
+                      {state.user.firstName}
+                    </NavLink>
                     <NavLink to="/user_address">Address</NavLink>
                     <NavLink
                       to="/"

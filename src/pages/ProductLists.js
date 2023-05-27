@@ -1,5 +1,6 @@
 import { useProductContext } from "../context/product-context";
 import ProductCard from "../component/ProductCard";
+import { ToastContainer } from "react-toastify";
 
 import Filters from "../component/Filters";
 import "../styles/product-list.css";
@@ -21,6 +22,7 @@ export default function ProductList() {
 
   return (
     <div className="content">
+      <ToastContainer />
       <div className="filter-container">
         <Filters />
       </div>
