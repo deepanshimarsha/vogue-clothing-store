@@ -106,7 +106,29 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   margin-top: 5px;
+  position:relative
 
+}
+.wishlist-notif-count {
+  position: absolute;
+ 
+  font-size: .2rem;
+  padding: .4rem;
+  height: 1.2rem;
+  top: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  right: 8px;
+}
+
+.wishlist-notif-count span{
+  color: white;
+  font-size: small;
 }
 
 .link-container {

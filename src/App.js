@@ -52,9 +52,23 @@ function App() {
             </NavLink>
             <NavLink className="nav-link" to="/wishlist" style={navLinkStyle}>
               <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
+              <div
+                className="wishlist-notif-count"
+                style={{ opacity: state.wishlist.length === 0 ? "0" : "1" }}
+              >
+                <span>
+                  {state.wishlist.length === 0 ? "" : state.wishlist.length}
+                </span>
+              </div>
             </NavLink>
             <NavLink className="nav-link" to="/cart" style={navLinkStyle}>
               <i class="fa fa-shopping-cart" style={{ fontSize: "24px" }}></i>
+              <div
+                className="wishlist-notif-count"
+                style={{ opacity: state.cart.length === 0 ? "0" : "1" }}
+              >
+                <span>{state.cart.length === 0 ? "" : state.cart.length}</span>
+              </div>
             </NavLink>
             {state.isLoggedIn ? (
               <div className="dropdown-main">
