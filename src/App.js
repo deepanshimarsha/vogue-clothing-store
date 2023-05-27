@@ -105,17 +105,15 @@ function App() {
             ) : (
               <button className="dropbtn">
                 <NavLink
-                  className="nav-link"
+                  className="navbar-login-btn"
                   to="/login"
                   state={{ from: location }}
+                  style={navLinkStyle}
                 >
                   Login
                 </NavLink>
               </button>
             )}
-            {/* <NavLink className="nav-link" to="/user_account">
-              My Account
-            </NavLink> */}
           </div>
         </div>
       </nav>
