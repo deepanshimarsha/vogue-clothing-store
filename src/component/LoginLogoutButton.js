@@ -7,7 +7,7 @@ export default function LoginLogoutButton({ location }) {
 
   const navigate = useNavigate();
 
-  //console.log(location?.state?.from?.pathname === "/login");
+  console.log(location?.state?.from?.pathname === "/login");
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -18,8 +18,7 @@ export default function LoginLogoutButton({ location }) {
         location?.state?.from?.pathname === "/signup"
       ) {
         navigate("/");
-      }
-      if (!location?.state) {
+      } else if (!location?.state) {
         navigate("/products");
       } else {
         navigate(location?.state?.from);
@@ -28,9 +27,6 @@ export default function LoginLogoutButton({ location }) {
       localStorage.removeItem("loginToken");
       dispatch({ type: "CLEAR_CART" });
       dispatch({ type: "CLEAR_WISHLIST" });
-      // if (state.user !== testUser) {
-      //   dispatch({ type: "SET_TEST_USER", data: testUser });
-      // }
       navigate("/");
     }
 
