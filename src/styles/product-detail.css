@@ -77,7 +77,7 @@
 .category-box {
     background-color: #e7e7e7; color: black;
     padding: 10px 20px;
-    width: 20%;
+ 
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -102,4 +102,73 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   
    
+}
+.fa  {
+    font-size: 24px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .detail-container {
+        width: 85%;
+       height: 25vh;
+       justify-content: space-around;
+      
+    }
+
+    .detail-description {
+        height: 25vh;
+        width: 80%;
+        line-height: 13px;
+        margin-left: 10px;
+        margin-top: 3px;
+        justify-content: space-between;
+    }
+
+    .detail-title {
+        font-size: small;
+       margin-top: 3px;
+    }
+
+    .rating{
+        font-size: smaller;
+    }
+    .fa  {
+        font-size: 10px;
+    }
+    .reviews {
+        font-size: 10px;
+    }
+
+    .detail-category {
+        font-size: x-small;
+        margin-top: 5px;
+    }
+    .category-box {
+        font-size: xx-small;
+        padding: 5px 10px;
+        text-align: left;
+        
+    }
+    .detail-description .para {
+        font-size: 7px;
+        margin-top: 0px;
+    }
+    .para hr {
+        margin: 1px;
+    }
+
+    .detail-description .detail-price {
+        margin-top: 2px;
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .detail-description .btn {
+        font-size: x-small;
+        padding: 5px;
+        margin: 10px;
+        margin-top: 0px;
+       
+    }
 }

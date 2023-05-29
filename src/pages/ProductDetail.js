@@ -51,7 +51,7 @@ export default function ProductDetail() {
                     return (
                       <span
                         class="fa fa-star"
-                        style={{ fontSize: "24px" }}
+                        // style={{ fontSize: "24px" }}
                       ></span>
                     );
                   })}
@@ -59,7 +59,7 @@ export default function ProductDetail() {
                     return (
                       <i
                         className="fa fa-star-o "
-                        style={{ fontSize: "24px" }}
+                        // style={{ fontSize: "24px" }}
                       ></i>
                     );
                   })}
