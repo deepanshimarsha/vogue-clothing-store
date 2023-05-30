@@ -164,3 +164,100 @@ background-color: #EA4C89;
 .card :hover{
     cursor: pointer;
 }
+.dress-img1 img{
+    width: 760px;
+}
+
+.top-img img{
+    width: 850px;
+}
+.dress-img3 img{
+    width:820px;
+}
+
+
+@media only screen and (max-width: 600px) {
+.home-main{
+    position: relative;
+    bottom: -20%;
+  }
+
+  .home-btn {
+    font-size: small;
+    bottom: 23px;
+    line-height: 7px;
+  }
+  .home-btn h1{
+    font-size: small;
+    font-weight: bold
+  }
+  .home-btn p {
+    font-size: smaller;
+    margin: 10px 0px 8px 0px;
+  }
+  .home-btn button {
+    font-size: smaller;
+    padding: 8px;
+  }
+
+  .banner {
+    padding-bottom: 10px;
+  }
+  .banner button {
+    font-size: larger;
+    font-weight: bold;
+    
+  }
+  .dress-category {
+    display: flex;
+    flex-direction: column;
+  }
+  .dress-img1 img{
+    width: 120%;
+}
+
+.top-img img{
+    width: 100%;
+}
+.dress-img3 img{
+    width:100%;
+}
+.right-collection-section {
+    display: flex;
+    flex-direction: column;
+    width: 120%;
+}
+.dress-collection {
+    gap: 0.5rem;
+    margin: 2px 10px;
+    margin-right: 45px;
+
+}
+.dress-card{
+    min-height: 30vh  !important
+}
+.top-category {
+    display: flex;
+    flex-direction: column;
+}
+.top-collection {
+    gap: 0.5px;
+    margin: 2px;
+    margin-right: 0px;
+    margin-left: 18px;
+}
+.top-card {
+    min-height: 10vh  !important;
+    margin: 1px !important;
+}
+.bottom-category {
+    display: flex;
+    flex-direction: column;
+}
+.bottoms4{
+    margin: 5px;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
+}

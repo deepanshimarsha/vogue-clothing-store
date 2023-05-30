@@ -66,14 +66,17 @@ export default function ProductCard(item) {
       >
         {indexWishlist === -1 ? (
           <i
-            class="fa fa-heart-o"
+            class="fa fa-heart-o wishlist-icon-before"
             aria-hidden="true"
             style={{
               fontSize: "24px",
             }}
           ></i>
         ) : (
-          <i class="fa fa-heart" style={{ fontSize: "24px", color: "red" }}></i>
+          <i
+            class="fa fa-heart wishlist-icon-before after"
+            style={{ fontSize: "24px", color: "red" }}
+          ></i>
         )}
       </span>
     </div>

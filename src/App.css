@@ -101,7 +101,6 @@ body {
 }
 
 
-
 .nav-link {
   padding: 14px 16px;
   text-decoration: none;
@@ -136,7 +135,15 @@ body {
   color: white;
   font-size: small;
 }
-
+.fa-heart-o {
+  font-size: 24px;
+}
+.fa-shopping-cart{
+  font-size: 24px;
+}
+.fa-user{
+  font-size: 24px;
+}
 .link-container {
   margin-left: 100px;
 }
@@ -216,4 +223,63 @@ body {
 .Toastify__toast-container--top-right {
   top: 10em;
   right: 1em;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 2px;
+    
+  }
+  .navbar-main{
+    gap: 1rem;
+  }
+  .navbar-left {
+    width: 20%;
+  }
+  .heading {
+    font-size: medium;
+    padding: 2px;
+    margin-top: 5px;
+  }
+  .navbar-search {
+    width: 15%;
+    padding: 4px 9px;
+    background: none;
+    margin-top: 5px;
+  }
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    margin-right: 46px;
+    
+  }
+  .nav-link {
+    padding: 4px 8px;
+    
+  }
+  
+.our-products{
+  font-size: small;
+}
+.fa-heart-o {
+  font-size: medium;
+}
+.fa-shopping-cart{
+  font-size: medium;
+}
+.fa-user{
+  font-size: medium;
+}
+.dropdown {
+  top: 3%;
+  right: 4%;
+}
+.dropdown-content {
+  right: 5%;
+  min-width: 20px;
+  
+}
+
+
 }

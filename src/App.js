@@ -49,11 +49,15 @@ function App() {
           ></input>
           <div className="navbar-right">
             {" "}
-            <NavLink className="nav-link" to="/products" style={navLinkStyle}>
+            <NavLink
+              className="nav-link our-products"
+              to="/products"
+              style={navLinkStyle}
+            >
               Our Products
             </NavLink>
             <NavLink className="nav-link" to="/wishlist" style={navLinkStyle}>
-              <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
+              <i class="fa fa-heart-o"></i>
               <div
                 className="wishlist-notif-count"
                 style={{ opacity: state.wishlist.length === 0 ? "0" : "1" }}
@@ -64,7 +68,7 @@ function App() {
               </div>
             </NavLink>
             <NavLink className="nav-link" to="/cart" style={navLinkStyle}>
-              <i class="fa fa-shopping-cart" style={{ fontSize: "24px" }}></i>
+              <i class="fa fa-shopping-cart"></i>
               <div
                 className="wishlist-notif-count"
                 style={{ opacity: state.cart.length === 0 ? "0" : "1" }}
@@ -77,10 +81,7 @@ function App() {
                 {" "}
                 <div class="dropdown">
                   <button class="dropbtn">
-                    <i
-                      class="fa fa-user"
-                      style={{ fontSize: "25px", padding: "5px" }}
-                    ></i>
+                    <i class="fa fa-user" style={{ padding: "5px" }}></i>
                   </button>
                   <div class="dropdown-content">
                     <NavLink to="/user_account">

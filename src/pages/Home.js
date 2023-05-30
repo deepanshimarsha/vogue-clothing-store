@@ -62,10 +62,9 @@ export default function Home() {
           })}
       </div>
       <div className="dress-category">
-        <div className="dress-img img">
+        <div className="dress-img1 img">
           <img
             src="https://img101.urbanic.com/v1/876019096d5c49d6b8323b26a173f8a2.webp"
-            width="760px"
             role="button"
             alt="dress-collection"
             onClick={handleClickForDress}
@@ -115,7 +114,7 @@ export default function Home() {
               .map((item) => {
                 return (
                   <div
-                    className="card"
+                    className="top-card card"
                     style={{ width: "90%", marginLeft: "20px" }}
                   >
                     <NavLink to={`/details/${item._id}`}>
@@ -141,7 +140,6 @@ export default function Home() {
         <div className="top-img img">
           <img
             src="https://img101.urbanic.com/v1/9e70d04cbcc64331a7706e317653f08b.webp"
-            width="850px"
             role="button"
             alt="banner"
             onClick={handleClickForTop}
@@ -158,10 +156,9 @@ export default function Home() {
           })}
       </div>
       <div className="bottom-category">
-        <div className="dress-img img">
+        <div className="dress-img3 img">
           <img
             src="https://img101.urbanic.com/v1/2f5931d4330e42e5b1d014d7a2961444.webp"
-            width="820px"
             role="button"
             onClick={handleClickForBottom}
             alt="top-collection"
@@ -169,7 +166,7 @@ export default function Home() {
         </div>
 
         <div className="right-collection-section" style={{ width: "100%" }}>
-          <div className="dress-collection">
+          <div className="dress-collection bottoms4">
             {state.products
               .filter(({ categoryName }) => categoryName === "bottoms")
               .filter((item, idx) => idx <= 3)
