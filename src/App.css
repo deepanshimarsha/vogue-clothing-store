@@ -231,18 +231,18 @@ body {
     
   }
   .navbar-main{
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .navbar-left {
     width: 20%;
   }
   .heading {
     font-size: medium;
-    padding: 2px;
+    padding: 0px;
     margin-top: 5px;
   }
   .navbar-search {
-    width: 15%;
+    width: 25%;
     padding: 4px 9px;
     background: none;
     margin-top: 5px;
@@ -251,25 +251,28 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 3px;
-    margin-right: 46px;
-    
-  }
-  .nav-link {
-    padding: 4px 8px;
+    margin-right: 50px;
+
     
   }
   
+.nav-link {
+  padding: 4px;
+}
 .our-products{
   font-size: small;
+  padding: 0px;
 }
 .fa-heart-o {
-  font-size: medium;
+  font-size: large;
+  
 }
-.fa-shopping-cart{
-  font-size: medium;
+.nav-link .fa-shopping-cart{
+  font-size: large;
+ 
 }
 .fa-user{
-  font-size: medium;
+  font-size:large;
 }
 .dropdown {
   top: 3%;
@@ -280,6 +283,10 @@ body {
   min-width: 20px;
   
 }
-
+.wishlist-notif-count{
+  width: 2px;
+  height: 2px;
+  right: -3px;
+}
 
 }

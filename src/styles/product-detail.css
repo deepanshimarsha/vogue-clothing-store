@@ -114,18 +114,25 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .detail-container {
-        width: 85%;
-       height: 25vh;
+        width: 80%;
+       height: 77vh;
        justify-content: space-around;
+       display: flex;
+       flex-direction: column;
+       margin: 20px auto;
+       
       
+    }
+    .detail-container img {
+        width: 100% !important; 
     }
 
     .detail-description {
         height: 25vh;
         width: 80%;
-        line-height: 13px;
+        line-height: 15px;
         margin-left: 10px;
-        margin-top: 3px;
+        margin-top: 10px;
         justify-content: space-between;
     }
 
@@ -168,13 +175,14 @@
     .detail-description .detail-price {
         margin-top: 2px;
         font-size: 10px;
-        margin-left: 10px;
+       
+        margin-bottom: 3px;
     }
 
     .detail-description .btn {
         font-size: x-small;
         padding: 5px;
-        margin: 10px;
+        margin: 0px;
         margin-top: 0px;
        
     }

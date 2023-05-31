@@ -177,6 +177,10 @@ background-color: #EA4C89;
 
 
 @media only screen and (max-width: 600px) {
+
+.home-img img {
+    width: 170% !important;
+}
 .home-main{
     position: relative;
     bottom: -20%;
@@ -184,7 +188,7 @@ background-color: #EA4C89;
 
   .home-btn {
     font-size: small;
-    bottom: 23px;
+    bottom: 60px;
     line-height: 7px;
   }
   .home-btn h1{
@@ -198,6 +202,7 @@ background-color: #EA4C89;
   .home-btn button {
     font-size: smaller;
     padding: 8px;
+    width: 120%;
   }
 
   .banner {
