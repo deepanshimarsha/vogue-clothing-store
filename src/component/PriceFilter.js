@@ -5,7 +5,13 @@ export default function PriceFilter() {
   return (
     <div>
       <div className="price-label">
-        <label>Price : Rs.{state.filters.priceRange}</label>
+        {state.filters.priceRange === "" ? (
+          <label>Price</label>
+        ) : (
+          <label>
+            Price : <span>{state.filters.priceRange}</span>
+          </label>
+        )}
       </div>
 
       <div className="price-range">

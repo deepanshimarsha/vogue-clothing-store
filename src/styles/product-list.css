@@ -72,6 +72,10 @@
     font-size: small;
     
 }
+.price-label label ::before{
+    content: "₹";
+}
+
 
 .price-range {
     display: flex;
@@ -159,7 +163,6 @@
     }
     .price-label {
         font-size: 14px;
-        
         margin-bottom: 10px;
     }
     .price-range{

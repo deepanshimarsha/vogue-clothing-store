@@ -234,9 +234,11 @@ body {
 }
 
 
-.Toastify__toast-container--top-right {
-  top: 10em;
-  right: 1em;
+.toast-message {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 1rem 0.5rem;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

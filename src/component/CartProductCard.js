@@ -20,7 +20,7 @@ export default function CartProductCard(item) {
   const handleClickForWishlist = () => {
     if (indexWishlist === -1) {
       addToWishlist(item);
-      toast("Added to wishlist");
+      toast("Added to wishlist", { className: "toast-message" });
     } else {
       navigate("/wishlist");
     }

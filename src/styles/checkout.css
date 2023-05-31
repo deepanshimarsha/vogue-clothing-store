@@ -96,7 +96,7 @@ padding-top: 40px;
     }
     .order-card{
         position: static;
-        width: 90%;
+        width: 91.6%;
         margin: 5px;
         padding: 20px 10px;
     }
@@ -114,11 +114,15 @@ padding-top: 40px;
         
     }
     .add-address{
-        text-align: center;
+        text-align: left;
         font-size: small;
+        margin-left: 10px;
     }
     .order-detail .order-heading{
         font-size: 24px !important;
+    }
+    hr{
+        margin: 10px 0px;
     }
    
 }

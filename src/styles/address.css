@@ -92,6 +92,7 @@
 }
 @media only screen and (max-width: 600px){
     .address-container{
+        margin-top: 20px;
         width: 95%;
     }
     .address-title{

@@ -17,6 +17,7 @@ export default function UserProfile() {
           </span>{" "}
           <span>{firstName + " " + lastName}</span>
         </p>
+
         <p>
           <span>
             <b>Email </b>
