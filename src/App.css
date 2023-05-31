@@ -243,31 +243,45 @@ body {
     
   }
   .navbar-main{
-    width: 75%;
+    width: 90%;
     gap: 0rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin: 2px;
   }
   .navbar-left {
-    width: 20%;
+    width: 25%;
+    min-width: 30%;
+    margin-left: 20px;
+
   }
   .heading {
-    font-size: medium;
+    font-size: large;
+    font-weight: bold;
     padding: 0px;
-    margin-top: 5px;
+    margin-top: 2px;
   }
   .navbar-search {
-    width: 25%;
+    min-width: 25%;
     padding: 4px 9px;
     background: none;
-    margin-top: 5px;
+    margin-top: 2px;
+    margin-right: 10px;
   }
   .navbar-right {
     display: flex;
     flex-direction: row;
+    align-items: start;
+    /* justify-content: space-around; */
+    /* margin-right: 50px; */
+    margin: 2px;
+    gap: 0.5rem;
+    /* margin-right: 20px; */
     margin-top: 3px;
-    margin-right: 50px;
-    width: 20%;
-    gap: 0.65rem;
+   
+    /* justify-content: flex-start; */
+    min-width: 50%;
+    
+
 
     
   }
@@ -275,25 +289,22 @@ body {
 .nav-link {
   padding: 4px;
 }
-.our-products{
-  font-size: small;
-  padding: 0px;
+.fa-heart {
+  font-size: 25px;
 }
-.fa-heart-o {
-  font-size: larger;
-  
-}
-.nav-link .fa-shopping-cart{
-  font-size: larger;
- 
+.fa-shopping-cart{
+  font-size: 25px;
 }
 .fa-user{
-  font-size:larger;
+  font-size: 27px;
+}
+.fa-th{
+  font-size: 25px;
 }
 .dropdown {
+  top: 21px;
+  margin-left: 0px;
   
-  margin-left: 3.5px;
-  margin-bottom:1.5px;
   
 }
 .dropdown-main{
@@ -307,12 +318,14 @@ body {
   
 }
 .wishlist-notif-count{
-  width: 2px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
   right: -3px;
 }
 .navbar-login-btn{
-  padding: 4px;
+  padding:0px;
+  margin-top: 5px;
+  
 }
 
 }
