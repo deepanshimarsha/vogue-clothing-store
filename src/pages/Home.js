@@ -40,11 +40,13 @@ export default function Home() {
   return (
     <div className="home-main">
       <div className="home-img">
-        <img
-          src="https://t4.ftcdn.net/jpg/02/81/64/15/360_F_281641591_rNWtGEBhBMROKxPOBfalLnaoIpdG2i0j.jpg"
-          width="100%"
-          alt="hero"
-        />
+        <div className="hero-image">
+          <img
+            src="https://t4.ftcdn.net/jpg/02/81/64/15/360_F_281641591_rNWtGEBhBMROKxPOBfalLnaoIpdG2i0j.jpg"
+            width="100%"
+            alt="hero"
+          />
+        </div>
 
         <div className="home-btn">
           <h1>Welcome!</h1>

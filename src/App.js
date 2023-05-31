@@ -37,7 +37,7 @@ function App() {
         <div className="navbar-main">
           {" "}
           <NavLink className="navbar-left heading" to="/" style={navLinkStyle}>
-            <span>E-Mart</span>
+            <span>VOGUE</span>
           </NavLink>
           <input
             className="navbar-search"
