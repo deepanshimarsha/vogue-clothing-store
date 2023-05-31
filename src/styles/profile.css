@@ -35,3 +35,36 @@
     
     
 }
+
+@media only screen and (max-width: 600px){
+    .profile-container{
+        width: 95%;
+        padding: 5px;
+    }
+    .profile-title{
+        font-size: 20px;
+        margin: 5px;
+        letter-spacing: 2px;
+    }
+    .profile-description{
+        font-size: small;
+        max-width: 80%;
+        margin: 5px;
+        letter-spacing: 2px;
+    }
+    .profile-description p {
+        font-size: 14px;
+        gap: 0.5rem;
+        /* flex-wrap: wrap; */
+    }
+    .profile-btn{
+        margin: auto;
+        margin-bottom: 10px;
+        
+    }
+    .login-btn{
+        font-size: medium;
+        padding: 10px;
+        width: 100%;
+    }
+}

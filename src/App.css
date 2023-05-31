@@ -231,7 +231,9 @@ body {
     
   }
   .navbar-main{
-    gap: 0.5rem;
+    width: 75%;
+    gap: 0rem;
+    justify-content: space-between;
   }
   .navbar-left {
     width: 20%;
@@ -252,6 +254,8 @@ body {
     flex-direction: row;
     margin-top: 3px;
     margin-right: 50px;
+    width: 20%;
+    gap: 0.65rem;
 
     
   }
@@ -272,11 +276,18 @@ body {
  
 }
 .fa-user{
-  font-size:large;
+  font-size:larger;
 }
 .dropdown {
-  top: 3%;
-  right: 4%;
+  
+  margin-left: 3.5px;
+  margin-bottom:1.5px;
+  
+}
+.dropdown-main{
+  position: static;
+  top: 0%;
+  left: 0%;
 }
 .dropdown-content {
   right: 5%;
@@ -287,6 +298,9 @@ body {
   width: 2px;
   height: 2px;
   right: -3px;
+}
+.navbar-login-btn{
+  padding: 4px;
 }
 
 }

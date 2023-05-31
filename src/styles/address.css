@@ -90,3 +90,36 @@
    
   
 }
+@media only screen and (max-width: 600px){
+    .address-container{
+        width: 95%;
+    }
+    .address-title{
+        font-size: 22px;
+        margin: 5px;
+    }
+    .address-content{
+        margin: 10px;
+    }
+    .address-btn button{
+        margin-top: 5px;
+    }
+    .address-footer{
+        margin: 10px;
+    }
+    .address-form{
+        margin: 10px;
+        width: 92%;
+    }
+    .address-form input{
+        margin: 5px;
+    }
+    .address-btn{
+        width: 98%;
+        margin: 5px;
+    }
+    .address-btn button{
+        padding: 2px;
+        font-size: small;
+    }
+}

@@ -125,3 +125,42 @@ input[type=submit]{
     display: flex;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px){
+   .signup-container{
+    margin: 5px;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+   }
+   .thumbnail-heading{
+    
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+   }
+  
+   .signup_form{
+    margin: 10px;
+    padding: 5px;
+    width: 92%;
+   }
+   .signup_form h3{
+    font-size: larger;
+   }
+   .signup_group{
+    margin-top: 10px;
+   }
+   
+   .signup-footer{
+    margin-top: 10px;
+   }
+   .signup-footer input{
+    font-size: small;
+    padding: 10px 5px;
+   }
+   .signup-footer a{
+    font-size: small;
+    align-self: flex-end;
+   }
+}
