@@ -189,18 +189,18 @@ background-color: #EA4C89;
   .home-btn {
     font-size: small;
     bottom: 60px;
-    line-height: 7px;
+    line-height: 10px;
   }
   .home-btn h1{
-    font-size: small;
+    font-size: large;
     font-weight: bold
   }
   .home-btn p {
-    font-size: smaller;
+    font-size: medium;
     margin: 10px 0px 8px 0px;
   }
   .home-btn button {
-    font-size: smaller;
+    font-size: small;
     padding: 8px;
     width: 120%;
   }

@@ -88,3 +88,37 @@ padding-top: 40px;
     color: black;
     margin-top: 15px;
 }
+@media only screen and (max-width: 600px) {
+    .address-lists{
+        position: static;
+        margin: 5px;
+        width: 90%;
+    }
+    .order-card{
+        position: static;
+        width: 90%;
+        margin: 5px;
+        padding: 20px 10px;
+    }
+    .order-heading{
+        font-size: large;
+    }
+    .checkout-address-card {
+        width: 105%;
+        margin: 0px;
+        padding: 5px;
+    }
+    .address-description {
+        font-size: small;
+        padding: 2px;
+        
+    }
+    .add-address{
+        text-align: center;
+        font-size: small;
+    }
+    .order-detail .order-heading{
+        font-size: 24px !important;
+    }
+   
+}
