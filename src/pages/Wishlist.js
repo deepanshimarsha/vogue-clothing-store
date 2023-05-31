@@ -11,7 +11,7 @@ export default function Wishlist() {
   //   getWishlist();
   // }, []);
   return (
-    <div>
+    <div className="wishlist-main-container">
       <ToastContainer />
       {wishlistLen !== 0 ? (
         <div className="wishlist-container">

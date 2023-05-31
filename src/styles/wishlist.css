@@ -14,6 +14,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    
+    justify-content: space-between;
   
 }
 
@@ -67,4 +69,18 @@
 
     opacity: 0.6;
     margin: 2px;
+}
+@media only screen and (max-width: 600px){
+    .wishlist-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin: 10px auto;
+    
+    }
+    .wishlist-main-container h1{
+        font-size: large;
+    }
+    .wishlist-card{
+        justify-content: space-between;
+    }
 }

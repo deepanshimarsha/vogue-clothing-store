@@ -117,9 +117,10 @@
     .address-btn{
         width: 98%;
         margin: 5px;
+        
     }
     .address-btn button{
-        padding: 2px;
+        padding: 8px 2px;
         font-size: small;
     }
 }

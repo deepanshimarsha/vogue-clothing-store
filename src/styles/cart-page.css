@@ -131,4 +131,7 @@ hr{
     .price-para{
         font-size: 16px;
     }
+    .cart-main-container h1{
+        font-size: large;
+    }
 }

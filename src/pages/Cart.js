@@ -10,7 +10,7 @@ export default function Cart() {
   const cartLen = state.cart.length;
 
   return (
-    <div>
+    <div className="cart-main-container">
       <ToastContainer />
       {cartLen !== 0 ? (
         <div className="cart-main">

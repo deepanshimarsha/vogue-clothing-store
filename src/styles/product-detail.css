@@ -114,8 +114,8 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .detail-container {
-        width: 80%;
-       height: 77vh;
+        width: 90%;
+       /* height: 77vh; */
        justify-content: space-around;
        display: flex;
        flex-direction: column;
@@ -128,62 +128,70 @@
     }
 
     .detail-description {
-        height: 25vh;
-        width: 80%;
+        min-height: 30vh;
+        width: 90%;
         line-height: 15px;
         margin-left: 10px;
         margin-top: 10px;
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
 
     .detail-title {
-        font-size: small;
-       margin-top: 3px;
+        font-size: large;
+       margin-top: 10px;
+       margin-bottom: 12px;
     }
 
     .rating{
-        font-size: smaller;
+        margin-bottom: 15px;
     }
     .fa-star   {
-        font-size: 10px;
+        font-size: 15px;
     }
     .fa-star-o{
-        font-size: 10px;
+        font-size: 15px;
     }
     .reviews {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .detail-category {
-        font-size: x-small;
+       
+        font-size: small;
         margin-top: 5px;
     }
     .category-box {
-        font-size: xx-small;
+        font-size: x-small;
         padding: 5px 10px;
         text-align: left;
+        width: 20%;
         
     }
     .detail-description .para {
-        font-size: 7px;
+        font-size: 12px;
         margin-top: 0px;
+        
+    }
+    .detail-description .para{
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
     .para hr {
-        margin: 1px;
+        margin: 5px;
     }
 
     .detail-description .detail-price {
         margin-top: 2px;
-        font-size: 10px;
+        font-size: larger;
        
         margin-bottom: 3px;
     }
 
     .detail-description .btn {
-        font-size: x-small;
-        padding: 5px;
+        font-size: medium;
+        padding: 10px 5px;
         margin: 0px;
-        margin-top: 0px;
+        margin-top: 10px;
        
     }
 }
