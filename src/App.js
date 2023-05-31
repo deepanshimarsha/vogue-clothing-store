@@ -54,10 +54,10 @@ function App() {
               to="/products"
               style={navLinkStyle}
             >
-              Our Products
+              <i class="fa fa-th"></i>
             </NavLink>
             <NavLink className="nav-link" to="/wishlist" style={navLinkStyle}>
-              <i class="fa fa-heart-o"></i>
+              <i class="fa fa-heart"></i>
               <div
                 className="wishlist-notif-count"
                 style={{ opacity: state.wishlist.length === 0 ? "0" : "1" }}
@@ -111,7 +111,7 @@ function App() {
                   state={{ from: location }}
                   style={navLinkStyle}
                 >
-                  Login
+                  <i class="fa fa-user" style={{ padding: "5px" }}></i>
                 </NavLink>
               </button>
             )}
