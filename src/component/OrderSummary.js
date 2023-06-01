@@ -3,7 +3,7 @@ import AddressCard from "./AddressCard";
 import "../styles/checkout.css";
 
 export default function OrderSummary() {
-  const { state, testAddress } = useProductContext();
+  const { state } = useProductContext();
   console.log("checkoutaddress", state.checkoutAddress);
   return (
     <div className="order-card">

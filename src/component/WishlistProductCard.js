@@ -1,6 +1,6 @@
 import { useProductContext } from "../context/product-context";
 import { toast } from "react-toastify";
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/wishlist.css";
 
 export default function WishlistProductCard(item) {
@@ -10,8 +10,6 @@ export default function WishlistProductCard(item) {
   const { _id, title, price, img } = item;
 
   const indexCart = findInCart(_id);
-
-  const navigate = useNavigate();
 
   const handleClickForCart = () => {
     if (indexCart === -1) {
