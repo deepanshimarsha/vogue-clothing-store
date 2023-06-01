@@ -23,7 +23,7 @@ export default function ProductList() {
   return (
     <div className="content">
       <div className="toastify">
-        <ToastContainer autoClose={0.2} />
+        <ToastContainer autoClose={1000} position="top-center" />
       </div>
 
       <div className="filter-container">
