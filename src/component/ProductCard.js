@@ -36,11 +36,15 @@ export default function ProductCard(item) {
   };
 
   const handleClickForWishlist = () => {
-    if (indexWishlist === -1) {
-      addToWishlist(item);
-      toast("Added to wishlist");
+    if (!state.isLoggedIn) {
+      navigate("/login");
     } else {
-      removeFromWishlist(item._id);
+      if (indexWishlist === -1) {
+        addToWishlist(item);
+        toast("Added to wishlist");
+      } else {
+        removeFromWishlist(item._id);
+      }
     }
   };
 
