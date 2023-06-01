@@ -54,7 +54,6 @@ export default function Home() {
           <button onClick={handleShowNowBtn}>SHOP NOW</button>
         </div>
       </div>
-
       <div className="banner">
         <button onClick={handleClickForDress}> Shop For Dresses</button>
         {state.category

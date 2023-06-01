@@ -2,9 +2,18 @@ import { NavLink } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import AddressCard from "./AddressCard";
 import "../styles/address.css";
+import { useNavigate } from "react-router-dom";
+
 export default function UserAddress() {
-  const { state, removeAddress } = useProductContext();
+  const { state, removeAddress, dispatch } = useProductContext();
   //console.log(state.address);
+
+  const navigate = useNavigate();
+
+  const handleEdit = (user_address) => {
+    dispatch({ type: "SET_EDIT_ADDRESS", data: user_address });
+    navigate("/edit");
+  };
   return (
     <div className="address-container">
       <h1 className="address-title" s>
@@ -15,7 +24,7 @@ export default function UserAddress() {
           <div className="address-content">
             <AddressCard {...user_address} />
             <div className="address-btn">
-              <button>Edit</button>
+              <button onClick={() => handleEdit(user_address)}>Edit</button>
               <button
                 onClick={() => {
                   console.log("addressId", user_address.id);

@@ -17,6 +17,7 @@ import Checkout from "./pages/Checkout";
 import "./styles/home-page.css";
 import UserAddress from "./component/UserAddress";
 import { useLocation, useNavigate } from "react-router-dom";
+import EditAddressForm from "./pages/EditAddress";
 
 function App() {
   const { state, dispatch } = useProductContext();
@@ -164,6 +165,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mockman" element={<Mockman />} />
+        <Route path="/edit" element={<EditAddressForm />} />
       </Routes>
     </div>
   );

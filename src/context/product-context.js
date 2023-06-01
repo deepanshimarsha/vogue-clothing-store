@@ -60,6 +60,7 @@ const ProductContextProvider = ({ children }) => {
     newAddress: {},
     checkoutAddress: {},
     isLoggedIn: token ? true : false,
+    showPassword: false,
     user: testUser,
     filters: {
       showDresses: false,

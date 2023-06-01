@@ -18,6 +18,10 @@ const reducer = (state, action) => {
         };
       }
     }
+
+    case "TOGGLE_SHOW_PASSWORD": {
+      return { ...state, showPassword: !state.showPassword };
+    }
     case "SET_PRODUCT": {
       return { ...state, products: action.data, filteredProducts: action.data };
     }
@@ -258,7 +262,6 @@ const reducer = (state, action) => {
         };
       }
       if (action.field === "ID") {
-        console.log("imp", action.value);
         return {
           ...state,
           newAddress: { ...state.newAddress, id: action.value },
@@ -290,6 +293,24 @@ const reducer = (state, action) => {
     }
     case "ADD_ADDRESS": {
       return { ...state, address: [...state.address, action.data] };
+    }
+
+    case "EDIT_ADDRESS": {
+      return {
+        ...state,
+        address: state.address.map((userAddress) => {
+          if (userAddress.id === action.data.id) {
+            userAddress = action.data;
+          }
+          return userAddress;
+        }),
+      };
+    }
+    case "SET_EDIT_ADDRESS": {
+      return {
+        ...state,
+        newAddress: action.data,
+      };
     }
 
     case "REMOVE_ADDRESS": {

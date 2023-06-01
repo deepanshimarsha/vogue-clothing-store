@@ -17,6 +17,9 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+  const ToggleShowPassword = () => {
+    dispatch({ type: "TOGGLE_SHOW_PASSWORD" });
+  };
   return (
     <div className="login-main">
       <div className="form-background">
@@ -31,11 +34,23 @@ export default function Login() {
             <label>Email</label>
 
             <input
-              type="password"
+              type={state.showPassword ? "text" : "password"}
               value={state.user.password}
               autocomplete="on"
             ></input>
-            <label>Password</label>
+
+            <div className="password-label">
+              <label>Password</label>
+
+              <div className="show-password">
+                <input
+                  type="checkbox"
+                  value={state.showPassword}
+                  onChange={ToggleShowPassword}
+                ></input>
+                <span>show password</span>
+              </div>
+            </div>
 
             <p>
               <LogoutButton location={location} />

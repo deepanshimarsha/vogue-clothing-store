@@ -24,8 +24,10 @@ export default function Signup() {
       navigate(location?.state?.from);
     }
   };
+  const ToggleShowPassword = () => {
+    dispatch({ type: "TOGGLE_SHOW_PASSWORD" });
+  };
 
-  console.log(state.error);
   return (
     <div className="signup-container">
       <div className="thumbnail-container">
@@ -91,7 +93,7 @@ export default function Signup() {
 
             <input
               value={state.user.password}
-              type="password"
+              type={state.showPassword ? "text" : "password"}
               autocomplete="on"
               onChange={(e) =>
                 dispatch({
@@ -101,7 +103,19 @@ export default function Signup() {
                 })
               }
             ></input>
-            <label>Password</label>
+
+            <div className="password-label">
+              <label>Password</label>
+
+              <div className="show-password">
+                <input
+                  type="checkbox"
+                  value={state.showPassword}
+                  onChange={ToggleShowPassword}
+                ></input>
+                <span>show password</span>
+              </div>
+            </div>
           </form>
         </div>
 

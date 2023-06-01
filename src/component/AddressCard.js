@@ -1,7 +1,6 @@
 import "../styles/checkout.css";
 
 export default function AddressCard(data) {
-  console.log(data);
   const { name, address, city, state, country, postal_code, phone_no } = data;
 
   return (

@@ -90,6 +90,21 @@ background-color: #EA4C89;
  .img :hover{
     cursor: pointer;
  }
+ .password-label {
+    display: flex;
+    justify-content: space-between;
+
+ }
+ .password-label label{
+    align-self: flex-end;
+ }
+ .show-password {
+    align-self: flex-end;
+ }
+ .show-password span {
+    font-size: medium;
+ }
+ 
 
 /* .banner {
     padding: 70px;
