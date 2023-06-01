@@ -44,6 +44,10 @@ export default function ProductCard(item) {
     }
   };
 
+  const ratingArrFilled = new Array(Number(item.rating)).fill(1);
+  const hollowStar = 5 - Number(item.rating);
+  const ratingArr = new Array(hollowStar).fill(0);
+
   return (
     <div className="card">
       <NavLink to={`/details/${item._id}`}>
@@ -52,7 +56,33 @@ export default function ProductCard(item) {
       </NavLink>
 
       <p className="prod-title">{title}</p>
+
+      <span className="rating">
+        <div className="stars">
+          {" "}
+          {ratingArrFilled.map((star) => {
+            return (
+              <span
+                class="fa fa-star"
+                // style={{ fontSize: "24px" }}
+              ></span>
+            );
+          })}
+          {ratingArr.map((star) => {
+            return (
+              <i
+                className="fa fa-star-o "
+                // style={{ fontSize: "24px" }}
+              ></i>
+            );
+          })}
+        </div>
+
+        <span className="reviews">{item.reviews} Reviews</span>
+      </span>
+
       <p className="price">Rs. {price}</p>
+
       <button
         onClick={handleClickForCart}
         style={{ backgroundColor: indexCart === -1 ? "black" : "#4C4C4C" }}

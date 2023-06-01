@@ -139,7 +139,7 @@ export const products = [
     title: "Positioning Printing Jogger",
     price: "650",
     rating: "5",
-    review: "26",
+    reviews: "26",
     categoryName: "bottoms",
   },
 ];

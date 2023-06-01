@@ -6,10 +6,10 @@ export default function PriceFilter() {
     <div>
       <div className="price-label">
         {state.filters.priceRange === "" ? (
-          <label>Price</label>
+          <label>Rating</label>
         ) : (
           <label>
-            Price : <span>{state.filters.priceRange}</span>
+            Rating : <span>{state.filters.priceRange}</span>
           </label>
         )}
       </div>
@@ -17,8 +17,8 @@ export default function PriceFilter() {
       <div className="price-range">
         <div className="price">
           {" "}
-          <div className="min-price">Rs.1k</div>
-          <div className="max-price">Rs.5k</div>
+          <div className="min-price">1 star</div>
+          <div className="max-price">5 star</div>
         </div>
 
         <div className="price-input">
@@ -27,9 +27,9 @@ export default function PriceFilter() {
               dispatch({ type: "SET_PRICE_RANGE", value: e.target.value });
             }}
             type="range"
-            min="1000"
-            max="5000"
-            step="100"
+            min="1"
+            max="5"
+            step="1"
             value={state.filters.priceRange}
           ></input>
         </div>

@@ -72,8 +72,8 @@
     font-size: small;
     
 }
-.price-label label ::before{
-    content: "₹";
+.price-label label ::after{
+    content: " star";
 }
 
 
@@ -198,7 +198,8 @@
         
     }
     .card{
-        min-height: 47vh;
+        min-height: 50vh;
+        gap: 0.1rem;
     }
     .card .price {
         margin: 5px;
@@ -209,9 +210,20 @@
     .card .prod-title{
         font-size: medium;
         margin: 5px;
+        margin-bottom: 1px;
     }
     .card button {
         padding: 8px;
         font-size: medium;
+    }
+    .card .rating {
+        margin-left: 5px;
+        margin-bottom: 5px;
+        gap: 0.3rem;
+        
+    }
+    .card .reviews {
+        font-size: 12px;
+        align-self: center;
     }
  }

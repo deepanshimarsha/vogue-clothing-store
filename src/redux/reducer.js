@@ -134,7 +134,7 @@ const reducer = (state, action) => {
 
       if (state.filters.priceRange !== "") {
         newFilteredProducts = newFilteredProducts.filter(
-          ({ price }) => Number(price) <= Number(state.filters.priceRange)
+          ({ rating }) => Number(rating) === Number(state.filters.priceRange)
         );
       }
 
