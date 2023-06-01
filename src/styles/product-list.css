@@ -160,6 +160,7 @@
     .price-filter {
         margin: 2px;
         margin-left: 5px;
+        width: 90px;
     }
     .price-label {
         font-size: 14px;
@@ -169,22 +170,30 @@
         margin-top: 5px;
     }
     .price-range .price{
-        font-size: 12px;
-        gap: 3rem;
+        font-size: 10px;
+        margin-left: 5px;
+        width: 81px;
+        
         justify-content: space-between;
     }
     .price-input {
        width: 10%;
     }
+    input[type="range" i]{
+       width: 83px;
+    }
+    
     .sort-filter {
         margin: 2px;
+        width: 50px;
+        margin-right: 15px;
     }
     .sort-label {
         font-size: 14px;
     }
     .sort-select select {
-        width: 50px;
-        padding : 1px;
+        width: 60px;
+        padding : 8px;
         font-size: 8px;
     }
 
