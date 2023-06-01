@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function Signup() {
   const { state, dispatch, signup, testUser } = useProductContext();
-
+  let confirmPassword = "";
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,6 +18,8 @@ export default function Signup() {
   const handleClick = () => {
     if (state.user.email === testUser.email) {
       dispatch({ type: "SET_ERROR", error: "Email is already registered!" });
+    } else if (state.user.password !== confirmPassword) {
+      dispatch({ type: "SET_ERROR", error: "Passwords do not match" });
     } else {
       signup();
       dispatch({ type: "TOGGLE_IS_LOGGED_IN" });
@@ -39,7 +41,9 @@ export default function Signup() {
 
       <div class="signup_form">
         <h3>CREATE ACCOUNT</h3>
-
+        <span className="email-error">
+          *{state.error.showError && state.error.error}
+        </span>
         <div class="signup_group">
           <form>
             <input
@@ -84,12 +88,7 @@ export default function Signup() {
               }
             ></input>
 
-            <label className="email-label">
-              Email{" "}
-              <span className="email-error">
-                *{state.error.showError && state.error.error}
-              </span>
-            </label>
+            <label className="email-label">Email </label>
 
             <input
               value={state.user.password}
@@ -110,12 +109,20 @@ export default function Signup() {
               <div className="show-password">
                 <input
                   type="checkbox"
-                  value={state.showPassword}
+                  value={state.user.password}
                   onChange={ToggleShowPassword}
                 ></input>
                 <span>show password</span>
               </div>
             </div>
+            <input
+              type="password"
+              autocomplete="off"
+              onChange={(e) => {
+                confirmPassword = e.target.value;
+              }}
+            ></input>
+            <label>Confirm Password</label>
           </form>
         </div>
 
