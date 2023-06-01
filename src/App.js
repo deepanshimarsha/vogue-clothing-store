@@ -31,6 +31,8 @@ function App() {
     }
   };
 
+  const totalProducts = state.cart.reduce((acc, curr) => acc + curr.qty, 0);
+
   return (
     <div className="App">
       <nav className="navbar">
@@ -73,7 +75,7 @@ function App() {
                 className="wishlist-notif-count"
                 style={{ opacity: state.cart.length === 0 ? "0" : "1" }}
               >
-                <span>{state.cart.length === 0 ? "" : state.cart.length}</span>
+                <span>{state.cart.length === 0 ? "" : totalProducts}</span>
               </div>
             </NavLink>
             {state.isLoggedIn ? (
@@ -96,6 +98,8 @@ function App() {
                         localStorage.removeItem("loginToken");
                         dispatch({ type: "CLEAR_CART" });
                         dispatch({ type: "CLEAR_WISHLIST" });
+                        dispatch({ type: "CLEAR_CHECKOUT_ADDRESS" });
+                        dispatch({ type: "CLEAR_TEST_ADDRESS_ON_SIGNUP" });
                       }}
                     >
                       Logout

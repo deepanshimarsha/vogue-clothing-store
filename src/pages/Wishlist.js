@@ -12,7 +12,7 @@ export default function Wishlist() {
   // }, []);
   return (
     <div className="wishlist-main-container">
-      <ToastContainer autoClose={1000} />
+      <ToastContainer autoClose={0.2} />
       {wishlistLen !== 0 ? (
         <div className="wishlist-container">
           {" "}

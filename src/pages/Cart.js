@@ -11,7 +11,7 @@ export default function Cart() {
 
   return (
     <div className="cart-main-container">
-      <ToastContainer autoClose={1000} />
+      <ToastContainer autoClose={0.2} />
       {cartLen !== 0 ? (
         <div className="cart-main">
           <div className="product-main">

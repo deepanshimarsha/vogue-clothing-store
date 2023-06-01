@@ -49,7 +49,8 @@ export default function OrderSummary() {
         <span className="order-heading">Deliver To </span>
         {!state.checkoutAddress.length && (
           <div>
-            <AddressCard {...testAddress} />
+            <p style={{ color: "red" }}>*Add an address before placing order</p>
+            {/* <AddressCard {...testAddress} /> */}
           </div>
         )}
         {state.checkoutAddress.length && (

@@ -4,12 +4,8 @@ import { useNavigate, NavLink } from "react-router-dom";
 import "../styles/wishlist.css";
 
 export default function WishlistProductCard(item) {
-  const {
-    removeFromWishlist,
-
-    findInCart,
-    addToCart,
-  } = useProductContext();
+  const { removeFromWishlist, incrementProductQty, findInCart, addToCart } =
+    useProductContext();
 
   const { _id, title, price, img } = item;
 
@@ -22,17 +18,18 @@ export default function WishlistProductCard(item) {
       addToCart(item);
       toast("Added to cart");
     } else {
-      navigate("/cart");
+      incrementProductQty(_id);
+      toast("Added to cart");
     }
+  };
+  const handleRemove = () => {
+    removeFromWishlist(_id);
+    toast("Removed from wishlist");
   };
 
   return (
     <div className="wishlist-card">
-      <span
-        role="button"
-        className="icon-background"
-        onClick={() => removeFromWishlist(_id)}
-      >
+      <span role="button" className="icon-background" onClick={handleRemove}>
         <i class="fa fa-close" style={{ fontSize: "24px", color: "black" }}></i>
       </span>
       <NavLink to={`/details/${item._id}`}>
@@ -50,7 +47,8 @@ export default function WishlistProductCard(item) {
             backgroundColor: indexCart !== -1 ? "#D3D3D3" : "",
           }}
         >
-          {indexCart === -1 ? "Move To Cart" : "Already In Cart"}
+          Add to Cart
+          {/* {indexCart === -1 ? "Move To Cart" : "Already In Cart"} */}
         </button>
       </div>
     </div>

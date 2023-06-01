@@ -270,6 +270,24 @@ const reducer = (state, action) => {
     case "CLEAR_TEST_ADDRESS_ON_SIGNUP": {
       return { ...state, address: [] };
     }
+    case "SET_TEST_ADDRESS": {
+      return {
+        ...state,
+        address: [
+          {
+            id: "default",
+            name: "Deepanshi Sharma",
+            address:
+              "103B, 1st floor, Akansha Residency, Narsingh Nagar, Ranjhi",
+            city: "Jabalpur",
+            state: "Madhya Pradesh",
+            country: "India",
+            postal_code: "482005",
+            phone_no: +917649942366,
+          },
+        ],
+      };
+    }
     case "ADD_ADDRESS": {
       return { ...state, address: [...state.address, action.data] };
     }
@@ -284,6 +302,9 @@ const reducer = (state, action) => {
 
     case "SET_CHECKOUT_ADDRESS": {
       return { ...state, checkoutAddress: action.data };
+    }
+    case "CLEAR_CHECKOUT_ADDRESS": {
+      return { ...state, checkoutAddress: {} };
     }
 
     default:

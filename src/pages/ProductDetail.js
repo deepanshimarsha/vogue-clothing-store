@@ -19,7 +19,7 @@ export default function ProductDetail() {
 
   return (
     <div>
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={0.2} />
       {state.productDetail.map((item) => {
         const indexCart = findInCart(item._id);
 

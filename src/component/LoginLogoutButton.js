@@ -13,6 +13,7 @@ export default function LoginLogoutButton({ location }) {
     e.preventDefault();
     if (!state.isLoggedIn) {
       loginUser();
+      dispatch({ type: "SET_TEST_ADDRESS" });
       if (
         location?.state?.from?.pathname === "/login" ||
         location?.state?.from?.pathname === "/signup"
@@ -27,6 +28,8 @@ export default function LoginLogoutButton({ location }) {
       localStorage.removeItem("loginToken");
       dispatch({ type: "CLEAR_CART" });
       dispatch({ type: "CLEAR_WISHLIST" });
+      dispatch({ type: "CLEAR_CHECKOUT_ADDRESS" });
+      dispatch({ type: "CLEAR_TEST_ADDRESS_ON_SIGNUP" });
       navigate("/");
     }
 
