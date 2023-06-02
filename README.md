@@ -1,22 +1,22 @@
-## VOGUE - E-COMMERCE - WEBSITE
+# VOGUE - E-COMMERCE - WEBSITE
 
-# FEATURES
+## FEATURES
 
-Home Page
-Product Listing Page
-Single Product Page
-Filters by
-Price
-Category 
-Ratings
-Wishlist Management
-Cart Management
-Search
-Loading & Alerts
-Authentication
-Sign-up
-Login
-Logout
-Address Management
-Checkout
+Home Page  <br />
+Product Listing Page<br />
+Single Product Page <br />
+Filters by <br />
+Price <br />
+Category  <br />
+Ratings <br />
+Wishlist Management <br />
+Cart Management <br />
+Search <br />
+Loading & Alerts <br />
+Authentication <br />
+Sign-up <br />
+Login <br />
+Logout <br />
+Address Management <br />
+Checkout <br />
 
