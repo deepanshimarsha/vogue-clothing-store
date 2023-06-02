@@ -68,7 +68,9 @@ export default function ProductDetail() {
                   })}
                 </div>
 
-                <span className="reviews">{item.reviews} Reviews</span>
+                <span className="reviews">
+                  {item.reviews} {item.reviews > 1 ? "reviews" : "review"}
+                </span>
               </span>
 
               <p className="detail-category">Category</p>

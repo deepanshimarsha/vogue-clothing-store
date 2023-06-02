@@ -80,7 +80,9 @@ export default function ProductCard(item) {
           })}
         </div>
 
-        <span className="reviews">{item.reviews} Reviews</span>
+        <span className="reviews">
+          {item.reviews} {item.reviews > 1 ? "reviews" : "review"}
+        </span>
       </span>
 
       <p className="price">Rs. {price}</p>
