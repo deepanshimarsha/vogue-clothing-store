@@ -29,6 +29,7 @@ export default function ProductList() {
       <div className="filter-container">
         <Filters />
       </div>
+
       <div className="products-container">
         {state.filteredProducts.map((item) => {
           return (

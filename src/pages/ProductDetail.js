@@ -24,13 +24,16 @@ export default function ProductDetail() {
         const indexCart = findInCart(item._id);
 
         const handleClickForCart = () => {
-          if (indexCart === -1) {
-            addToCart(item);
-            toast("Added to cart");
+          if (!state.isLoggedIn) {
+            navigate("/login");
           } else {
-            navigate("/cart");
+            if (indexCart === -1) {
+              addToCart(item);
+              toast("Added to cart");
+            } else {
+              navigate("/cart");
+            }
           }
-          console.log(state.cart);
         };
 
         const ratingArrFilled = new Array(Number(item.rating)).fill(1);

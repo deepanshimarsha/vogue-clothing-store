@@ -23,7 +23,6 @@ export default function ProductCard(item) {
   const handleClickForCart = () => {
     if (!state.isLoggedIn) {
       navigate("/login");
-      // <Navigate to="/login" state={{ from: location }} />;
     } else {
       if (indexCart === -1) {
         addToCart(item);
@@ -31,7 +30,6 @@ export default function ProductCard(item) {
       } else {
         navigate("/cart");
       }
-      //console.log(state.cart);
     }
   };
 
