@@ -1,3 +1,22 @@
-## E-Commerce Backend
+## VOGUE - E-COMMERCE - WEBSITE
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+# FEATURES
+
+Home Page
+Product Listing Page
+Single Product Page
+Filters by
+Price
+Category 
+Ratings
+Wishlist Management
+Cart Management
+Search
+Loading & Alerts
+Authentication
+Sign-up
+Login
+Logout
+Address Management
+Checkout
+
