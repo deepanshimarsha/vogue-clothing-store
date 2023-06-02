@@ -124,6 +124,12 @@ const reducer = (state, action) => {
         categories.push("bottoms");
       }
 
+      if (state.filters.sortBy === "ASC") {
+        newFilteredProducts = [...newFilteredProducts].sort(
+          (a, b) => a.price - b.price
+        );
+      }
+
       if (state.filters.sortBy === "DESC") {
         newFilteredProducts = [...newFilteredProducts].sort(
           (a, b) => b.price - a.price
@@ -141,8 +147,6 @@ const reducer = (state, action) => {
           ({ rating }) => Number(rating) === Number(state.filters.priceRange)
         );
       }
-
-      //console.log("a", newFilteredProducts);
 
       newFilteredProducts = newFilteredProducts.filter(({ categoryName }) => {
         if (categories.length === 0) {
