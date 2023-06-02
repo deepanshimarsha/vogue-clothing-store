@@ -20,3 +20,16 @@ Logout <br />
 Address Management <br />
 Checkout <br />
 
+## FRONTEND
+
+ReactJs <br/>
+CSS <br />
+
+## MOCK BACKEND
+
+mockBee 
+
+
+
+
+
