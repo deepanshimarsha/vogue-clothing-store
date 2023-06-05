@@ -191,6 +191,63 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <footer>
+        <div className="footer-content">
+          <h3>VOGUE CLOTHING STORE</h3>
+          <p>All your styles are here.</p>
+          <ul className="socials">
+            <li>
+              <NavLink to="">
+                <i className="fa fa-facebook"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="">
+                <i className="fa fa-twitter"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="">
+                <i className="fa fa-google-plus"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="">
+                <i className="fa fa-youtube"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="">
+                <i className="fa fa-linkedin-square"></i>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-bottom">
+          <p>
+            copyright &copy;2023 <NavLink to="">vogue</NavLink>
+          </p>
+        </div>
+        <div className="footer-menu">
+          <ul className="f-menu">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/products">Products</NavLink>
+            </li>
+            <li>
+              <NavLink to="">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="">Contact</NavLink>
+            </li>
+            <li>
+              <NavLink to="">Blogs</NavLink>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }

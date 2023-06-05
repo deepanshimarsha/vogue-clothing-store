@@ -240,6 +240,135 @@ body {
   font-size: 16px;
   padding: 1rem 0.5rem;
 }
+
+
+  footer{
+    
+    background: #111;
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff;
+    text-align: center;
+
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+  margin-bottom: 0px;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+  margin-bottom: 30px;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+  margin-inline-start :  0px;
+  padding-right: 37px;
+}
+.socials li{
+  margin: 0 10px;
+  
+}
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color .4s ease;
+}
+.socials a:hover i{
+  color: aqua;
+}
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  text-align: center;
+}
+.footer-bottom p{
+  /* float: left; */
+  text-align: center;
+  font-size: 14px;
+  word-spacing: 2px;
+  /* padding-left: 45px; */
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+ color:#44bae8;
+ font-size: 16px;
+ text-decoration: none;
+}
+.footer-bottom span{
+   text-transform: uppercase;
+   opacity: .4;
+   font-weight: 200;
+}
+.footer-menu{
+ 
+  padding: 10px;
+  padding-left: 590px;
+  
+}
+
+.footer-menu ul{
+  display: flex;
+  margin: auto;
+  
+}
+
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+@media (max-width:500px) {
+  .footer-menu{
+ 
+    padding: 10px;
+    padding-left: 0px;
+    
+  }
+  .footer-menu ul{
+    display: flex;
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .navbar {
