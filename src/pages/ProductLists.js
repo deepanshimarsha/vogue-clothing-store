@@ -1,20 +1,12 @@
 import { useProductContext } from "../context/product-context";
 import ProductCard from "../component/ProductCard";
 import { ToastContainer } from "react-toastify";
-
+import Loading from "../component/Loading";
 import Filters from "../component/Filters";
 import "../styles/product-list.css";
 
-import Loading from "../component/Loading";
-
 export default function ProductList() {
   const { state } = useProductContext();
-
-  // useEffect(() => {
-  //   getProductData();
-  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  console.log("products", state.filteredProducts);
   if (state.isLoading) {
     return <Loading />;
   }

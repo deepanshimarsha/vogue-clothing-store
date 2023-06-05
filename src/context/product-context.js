@@ -382,6 +382,11 @@ const ProductContextProvider = ({ children }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    getCategoryData();
+    getProductData();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <ProductContext.Provider
       value={{
