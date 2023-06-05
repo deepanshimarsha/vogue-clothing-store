@@ -304,7 +304,7 @@ body {
 }
 .footer-bottom{
   background: #000;
-  width: 100vw;
+  /* width: 100%; */
   padding: 20px;
   padding-bottom: 40px;
   padding-left: 0px;
