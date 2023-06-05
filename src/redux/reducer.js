@@ -147,7 +147,7 @@ const reducer = (state, action) => {
           ({ rating }) => Number(rating) === Number(state.filters.priceRange)
         );
       }
-
+      console.log("categories", categories);
       newFilteredProducts = newFilteredProducts.filter(({ categoryName }) => {
         if (categories.length === 0) {
           return true;
@@ -155,6 +155,7 @@ const reducer = (state, action) => {
           return categories.includes(categoryName);
         }
       });
+      console.log(state);
       return {
         ...state,
         filteredProducts: newFilteredProducts,

@@ -4,18 +4,17 @@ import { ToastContainer } from "react-toastify";
 
 import Filters from "../component/Filters";
 import "../styles/product-list.css";
-import { useEffect } from "react";
+
 import Loading from "../component/Loading";
 
 export default function ProductList() {
-  const { state, getProductData } = useProductContext();
+  const { state } = useProductContext();
 
-  useEffect(() => {
-    getProductData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   getProductData();
+  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log(state.isLoading);
-  //console.log("cart", state.cart);
+  console.log("products", state.filteredProducts);
   if (state.isLoading) {
     return <Loading />;
   }

@@ -9,6 +9,7 @@ export default function Home() {
     useProductContext();
 
   const navigate = useNavigate();
+  console.log(state.filters);
 
   useEffect(() => {
     getCategoryData();
