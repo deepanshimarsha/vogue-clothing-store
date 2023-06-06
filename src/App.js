@@ -56,6 +56,7 @@ function App() {
               className="nav-link our-products"
               to="/products"
               style={navLinkStyle}
+              // onClick={dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" })}
             >
               <i class="fa fa-th"></i>
             </NavLink>

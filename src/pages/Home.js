@@ -14,6 +14,7 @@ export default function Home() {
   useEffect(() => {
     getCategoryData();
     getProductData();
+    dispatch({ type: "CLEAR_FILTER", filter: "ALL_FILTER" });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (state.isLoading) {
