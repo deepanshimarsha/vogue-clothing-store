@@ -1,7 +1,7 @@
 import { useProductContext } from "../context/product-context";
 
 export default function SortFilter() {
-  const { dispatch } = useProductContext();
+  const { dispatch, state } = useProductContext();
   return (
     <div>
       <div className="sort-label">
@@ -9,6 +9,7 @@ export default function SortFilter() {
       </div>
       <div className="sort-select">
         <select
+          value={state.filters.sortBy}
           onChange={(e) =>
             dispatch({ type: "SET_SORT_BY", option: e.target.value })
           }
