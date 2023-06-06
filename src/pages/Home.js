@@ -225,11 +225,6 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <div className="footer-bottom">
-          <p>
-            copyright &copy;2023 <NavLink to="">vogue</NavLink>
-          </p>
-        </div>
         <div className="footer-menu">
           <ul className="f-menu">
             <li>
@@ -248,6 +243,17 @@ export default function Home() {
               <NavLink to="">Blogs</NavLink>
             </li>
           </ul>
+        </div>
+
+        <div className="footer-bottom">
+          <p>
+            {" "}
+            Developed By <NavLink to="">Deepanshi</NavLink>
+          </p>
+          <p>
+            copyright &copy;2023
+            <NavLink to="">vogue</NavLink>
+          </p>
         </div>
       </footer>
     </div>
