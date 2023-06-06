@@ -32,12 +32,21 @@ export default function AddressForm() {
     } else {
       dispatch({ type: "ADD_ADDRESS", data: state.newAddress });
 
-      navigate("/user_address");
+      if (location?.state?.from) {
+        navigate(location?.state?.from);
+      } else {
+        navigate("/user_address");
+      }
     }
   };
 
   const handleClickForCancel = () => {
-    navigate("/user_address");
+    // navigate("/user_address");
+    if (location?.state?.from) {
+      navigate(location?.state?.from);
+    } else {
+      navigate("/user_address");
+    }
   };
 
   useEffect(() => {
