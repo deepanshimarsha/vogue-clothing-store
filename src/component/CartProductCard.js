@@ -27,7 +27,7 @@ export default function CartProductCard(item) {
   };
 
   const qtyDecrement = () => {
-    if (qty !== 0) {
+    if (qty !== 1) {
       decremnetProductQty(_id);
     } else {
       removeFromCart(_id);
