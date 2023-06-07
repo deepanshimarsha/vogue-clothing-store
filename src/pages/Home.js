@@ -251,8 +251,7 @@ export default function Home() {
             Developed By <NavLink to="">Deepanshi</NavLink>
           </p>
           <p>
-            copyright &copy;2023
-            <NavLink to="">vogue</NavLink>
+            copyright &copy;2023 <NavLink to="">vogue</NavLink>
           </p>
         </div>
       </footer>
