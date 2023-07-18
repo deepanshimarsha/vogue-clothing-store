@@ -21,7 +21,7 @@ export default function Wishlist() {
           })}
         </div>
       ) : (
-        <h1>Your Wishlist Is Empty!</h1>
+        <h3>Your Wishlist Is Empty!</h3>
       )}
     </div>
   );

@@ -196,6 +196,10 @@ const reducer = (state, action) => {
       return { ...state, wishlist: [] };
     }
 
+    case "SET_ORDERS": {
+      return { ...state, orders: [...state.orders, action.order] };
+    }
+
     case "TOGGLE_IS_LOGGED_IN": {
       return { ...state, isLoggedIn: !state.isLoggedIn };
     }
@@ -284,14 +288,14 @@ const reducer = (state, action) => {
         address: [
           {
             id: "default",
-            name: "Deepanshi Sharma",
+            name: "Anjana Sodhani",
             address:
-              "103B, 1st floor, Akansha Residency, Narsingh Nagar, Ranjhi",
-            city: "Jabalpur",
-            state: "Madhya Pradesh",
+              "Opp Nehru Nagar BRTS Stop, Nehru Nagar Char Rasta , Satellite Road, Ambavadi",
+            city: "Ahmedabad",
+            state: "Gujarat",
             country: "India",
-            postal_code: "482005",
-            phone_no: +917649942366,
+            postal_code: "268009",
+            phone_no: +917926307991,
           },
         ],
       };

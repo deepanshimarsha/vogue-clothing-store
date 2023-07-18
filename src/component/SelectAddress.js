@@ -6,7 +6,7 @@ import "../styles/checkout.css";
 export default function SelectAddress() {
   const { state, dispatch } = useProductContext();
   const location = useLocation();
-  //console.log(state.checkoutAddress);
+  console.log(state.address);
   const handleClick = (id) => {
     const selectedAddress = state.address.filter((item) => item.id === id);
     dispatch({ type: "SET_CHECKOUT_ADDRESS", data: selectedAddress });

@@ -1,10 +1,73 @@
 import { useProductContext } from "../context/product-context";
 import AddressCard from "./AddressCard";
 import "../styles/checkout.css";
+import { useNavigate } from "react-router-dom";
 
 export default function OrderSummary() {
-  const { state } = useProductContext();
-  console.log("checkoutaddress", state.checkoutAddress);
+  const { state, dispatch, removeFromCart } = useProductContext();
+  const navigate = useNavigate();
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+  const displayRazorPay = async (amount) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      alert("you are offline");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_uFzn2d6DrQYTGQ",
+      currency: "INR",
+      amount: amount * 100,
+      name: "Vogue",
+      description: "Thanks for purchasing",
+      handler: function (response) {
+        if (response.razorpay_payment_id) {
+          if (state.orders) {
+            var order_no = state.orders.length + 1;
+          } else {
+            order_no = 1;
+          }
+
+          dispatch({
+            type: "SET_ORDERS",
+            order: {
+              order: state.cart,
+              order_no: order_no,
+              total_price: amount,
+            },
+          });
+          state.cart.map(({ _id }) => {
+            removeFromCart(_id);
+            return 0;
+          });
+          dispatch({ type: "CLEAR_CART" });
+          navigate("/orders");
+        }
+      },
+      prefill: {
+        name: "Vogue",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
   return (
     <div className="order-card">
       <div className="order-detail">
@@ -60,7 +123,20 @@ export default function OrderSummary() {
         )}
       </div>
 
-      <button className="place-order-btn">Place Order</button>
+      <button
+        className="place-order-btn"
+        disabled={!state.checkoutAddress.length ? true : false}
+        style={{ opacity: !state.checkoutAddress.length ? 0.7 : 1 }}
+        onClick={() => {
+          displayRazorPay(
+            Number(
+              state.cart.reduce((acc, curr) => acc + curr.price * curr.qty, 0)
+            )
+          );
+        }}
+      >
+        Place Order
+      </button>
     </div>
   );
 }

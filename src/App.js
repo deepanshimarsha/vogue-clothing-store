@@ -18,6 +18,7 @@ import "./styles/home-page.css";
 import UserAddress from "./component/UserAddress";
 import { useLocation, useNavigate } from "react-router-dom";
 import EditAddressForm from "./pages/EditAddress";
+import Orders from "./pages/Orders";
 
 function App() {
   const { state, dispatch } = useProductContext();
@@ -93,6 +94,7 @@ function App() {
                       {state.user.firstName}
                     </NavLink>
                     <NavLink to="/user_address">Address</NavLink>
+                    <NavLink to="/orders">Orders</NavLink>
                     <NavLink
                       to="/"
                       onClick={() => {
@@ -163,6 +165,7 @@ function App() {
           }
         />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders" element={<Orders />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mockman" element={<Mockman />} />

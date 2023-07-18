@@ -9,7 +9,7 @@ export default function Home() {
     useProductContext();
 
   const navigate = useNavigate();
-  console.log(state.filters);
+  console.log("orders", state.orders);
 
   useEffect(() => {
     getCategoryData();

@@ -5,21 +5,22 @@ const ProductContext = createContext(null);
 
 const ProductContextProvider = ({ children }) => {
   const testUser = {
-    firstName: "Deepanshi",
-    lastName: "Sharma",
-    email: "deepanshisharma2510@gmail.com",
+    firstName: "Anjana",
+    lastName: "Sodhani",
+    email: "anjanasodhani@gmail.com",
     password: "test",
   };
 
   const testAddress = {
     id: "default",
-    name: "Deepanshi Sharma",
-    address: "103B, 1st floor, Akansha Residency, Narsingh Nagar, Ranjhi",
-    city: "Jabalpur",
-    state: "Madhya Pradesh",
+    name: "Anjana Sodhani",
+    address:
+      "Opp Nehru Nagar BRTS Stop, Nehru Nagar Char Rasta , Satellite Road, Ambavadi",
+    city: "Ahmedabad",
+    state: "Gujarat",
     country: "India",
-    postal_code: "482005",
-    phone_no: +917649942366,
+    postal_code: "268009",
+    phone_no: +917926307991,
   };
 
   const dummyAddress = {
@@ -56,6 +57,7 @@ const ProductContextProvider = ({ children }) => {
     productDetail: [],
     cart: [],
     wishlist: [],
+    orders: [],
     address: [testAddress],
     newAddress: {},
     checkoutAddress: {},
