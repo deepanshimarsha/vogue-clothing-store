@@ -44,6 +44,7 @@ function App() {
             <span>VOGUE</span>
           </NavLink>
           <input
+            value={state.filters.searchInput}
             className="navbar-search"
             placeholder="Search"
             onChange={(e) => {
