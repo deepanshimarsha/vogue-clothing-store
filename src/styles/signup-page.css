@@ -1,6 +1,7 @@
 .signup-container {
     display: flex;
-    box-shadow: 0 30px 50px 0 rgba(0,0,0,.2);
+    /* box-shadow: 0 30px 50px 0 rgba(0,0,0,.2); */
+    border: 1px solid #ccc;
     width: 90%;
     margin: auto;
     text-align: center;

@@ -2,11 +2,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useProductContext } from "../context/product-context";
 import { useLocation } from "react-router-dom";
 import "../styles/signup-page.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Signup() {
   const { state, dispatch, signup, testUser } = useProductContext();
-  let confirmPassword = "";
+
+  const [confirmPass, setConfirmPass] = useState("");
+  const [pass, setPass] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ export default function Signup() {
   const handleClick = () => {
     if (state.user.email === testUser.email) {
       dispatch({ type: "SET_ERROR", error: "Email is already registered!" });
-    } else if (state.user.password !== confirmPassword) {
+    } else if (pass !== confirmPass) {
       dispatch({ type: "SET_ERROR", error: "Passwords do not match" });
     } else {
       signup();
@@ -94,18 +96,39 @@ export default function Signup() {
               value={state.user.password}
               type={state.showPassword ? "text" : "password"}
               autocomplete="on"
-              onChange={(e) =>
+              onChange={(e) => {
+                setPass(e.target.value);
                 dispatch({
                   type: "SET_USER",
                   field: "PASSWORD",
                   value: e.target.value,
-                })
-              }
+                });
+              }}
             ></input>
 
             <div className="password-label">
               <label>Password</label>
 
+              {/* <div className="show-password">
+                <input
+                  type="checkbox"
+                  value={state.user.password}
+                  onChange={ToggleShowPassword}
+                ></input>
+                <span>show password</span>
+              </div> */}
+            </div>
+
+            <input
+              type={state.showPassword ? "text" : "password"}
+              value={state.user.password}
+              autocomplete="off"
+              onChange={(e) => {
+                setConfirmPass(e.target.value);
+              }}
+            ></input>
+            <div className="password-label">
+              <label>Confirm Password</label>
               <div className="show-password">
                 <input
                   type="checkbox"
@@ -115,14 +138,6 @@ export default function Signup() {
                 <span>show password</span>
               </div>
             </div>
-            <input
-              type="password"
-              autocomplete="off"
-              onChange={(e) => {
-                confirmPassword = e.target.value;
-              }}
-            ></input>
-            <label>Confirm Password</label>
           </form>
         </div>
 

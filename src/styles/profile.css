@@ -1,11 +1,12 @@
 .profile-container{
     background-color: #fff;
-    width: 35%;
+    width: 45%;
     margin: 90px auto;
     text-align: center;
     padding: 20px 0 0;
     border-radius: 4px;
-    box-shadow: 0 30px 50px 0 rgba(0,0,0,.2);
+    /* box-shadow: 0 30px 50px 0 rgba(0,0,0,.2); */
+    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     
